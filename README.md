@@ -11,7 +11,7 @@ index.html                     Page content
 styles.css                     Styles, including light/dark themes and responsive layout
 script.js                      Theme toggle, mobile menu, scroll animations
 assets/                        Photos and the downloadable CV
-assets/fonts/                  Self-hosted Anton and Figtree fonts (SIL Open Font License)
+assets/fonts/                  JHC Rasbora, Type Machine and Jost, with their license files
 ```
 
 ## Run locally
