@@ -10,7 +10,8 @@ It's a static site (plain HTML, CSS and JavaScript) with no build step.
 index.html                     Page content
 styles.css                     Styles, including light/dark themes and responsive layout
 script.js                      Theme toggle, mobile menu, scroll animations
-assets/Gita_Swasti_CV_2026.pdf Downloadable CV
+assets/                        Photos and the downloadable CV
+assets/fonts/                  Self-hosted Anton and Figtree fonts (SIL Open Font License)
 ```
 
 ## Run locally
@@ -31,4 +32,4 @@ python3 -m http.server 8000
 
 ## Updating content
 
-All text lives in `index.html`, one section per `<section>`: About, Experience, Expertise, Education and Contact. To add a role, copy one `<li class="job reveal">` block in the Experience timeline and edit it. To replace the CV, overwrite the file in `assets/` and keep the same name, or update the two links that point to it.
+All text lives in `index.html`, one `<section>` per block: intro, journey, wins, practice areas, experience, works, writing, skills, honors, volunteering, education and contact. To add a role, copy one `<article class="job reveal">` block in Experience and edit it. To replace the CV, overwrite the file in `assets/` and keep the same name, or update the two links that point to it.

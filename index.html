@@ -9,38 +9,39 @@
   <meta property="og:description" content="Accounting-trained and impact-driven. Philanthropic portfolios, social-impact programs and community development across Indonesia.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/gita-portrait.jpg">
-  <meta name="theme-color" content="#1c3f9e">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='%231c3f9e'/><text x='32' y='42' font-family='Georgia,serif' font-size='28' font-weight='700' text-anchor='middle' fill='%23f6f3ee'>G</text></svg>">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#3b1f1a">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23ee6a3c'/><text x='32' y='46' font-family='Impact,Arial Black,sans-serif' font-size='40' text-anchor='middle' fill='%23fcfaee'>G</text></svg>">
+  <link rel="preload" href="assets/fonts/anton-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/figtree-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
-    <nav class="nav container" aria-label="Main">
-      <a href="#top" class="brand">Gita Swasti</a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
-        <span></span><span></span>
-      </button>
+    <nav class="nav" aria-label="Main">
+      <a href="#top" class="brand">Gita.</a>
+      <div class="nav-actions">
+        <a href="#contact" class="nav-cta">Contact</a>
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+          <span class="nav-toggle-label">Menu</span>
+          <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span></span>
+        </button>
+      </div>
       <ul class="nav-links" id="nav-links">
-        <li><a href="#about">About</a></li>
+        <li><a href="#journey">About</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#works">Works</a></li>
         <li><a href="#writing">Writing</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#honors">Honors</a></li>
         <li><a href="#volunteering">Volunteering</a></li>
         <li><a href="#education">Education</a></li>
-        <li><a href="#contact" class="nav-cta">Contact</a></li>
-        <li>
-          <button class="theme-toggle" aria-label="Toggle dark mode">
-            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-          </button>
-        </li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -48,33 +49,23 @@
   <main id="main">
     <!-- Hero -->
     <section class="hero" id="top">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <p class="eyebrow"><span class="dot"></span> Based in Bali, Indonesia</p>
-          <h1>Numbers mean most when they <em>protect people's futures</em>.</h1>
-          <p class="lead">
-            I'm Gita — accounting-trained and impact-driven. I moved from audit into sustainability
-            and social development, and now work across philanthropic portfolios, community programs
-            and enterprise development in Indonesia.
-          </p>
-          <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary">Get in touch</a>
-            <a href="assets/Gita_Swasti_CV_2026.pdf" class="btn btn-ghost" download>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>
-              Download CV
-            </a>
-          </div>
-        </div>
-        <div class="hero-art">
-          <figure class="portrait">
-            <img src="assets/gita-portrait.jpg" alt="Gita Swasti smiling, wearing a grey hijab, white shirt and purple patterned skirt against a blue backdrop" width="1000" height="1500" fetchpriority="high">
-          </figure>
-        </div>
-      </div>
+      <img class="hero-photo" src="assets/gita-portrait.jpg" alt="Gita Swasti smiling, wearing a grey hijab, white shirt and purple patterned skirt against a blue backdrop" width="1000" height="1500" fetchpriority="high">
+      <p class="hero-tag">Sustainability &amp; social impact<br>Based in Bali, Indonesia</p>
+      <h1 class="hero-name" aria-label="Gita Swasti"><span>Gita</span> <span>Swasti</span></h1>
     </section>
 
-    <!-- Stats -->
-    <section class="stats" aria-label="Highlights">
+    <!-- Intro -->
+    <section class="block block-cream intro">
+      <div class="container intro-grid">
+        <h2 class="display intro-title reveal">Hi, I'm<br>Gita Swasti.</h2>
+        <div class="intro-copy reveal">
+          <p class="intro-lead">Accounting-trained and impact-driven. I work across philanthropic portfolios, community programs and enterprise development, because <strong>numbers mean most when they protect people's futures.</strong></p>
+          <div class="intro-links">
+            <a href="#works" class="link-underline">Explore my work</a>
+            <a href="assets/Gita_Swasti_CV_2026.pdf" class="link-underline" download>Download CV</a>
+          </div>
+        </div>
+      </div>
       <div class="container stats-grid">
         <div class="stat reveal"><span class="stat-num" data-count="25">25</span><span class="stat-label">Partner NGOs the Black Licorice network is scaling toward</span></div>
         <div class="stat reveal"><span class="stat-num" data-count="100" data-suffix="+">100+</span><span class="stat-label">Coconut farmers trained in a 500+ farmer network</span></div>
@@ -83,461 +74,401 @@
       </div>
     </section>
 
-    <!-- About -->
-    <section class="section" id="about">
-      <div class="container about-grid">
-        <div class="about-media reveal">
-          <div class="section-head">
-            <p class="kicker">01 — About</p>
-            <h2>Equity of outcomes, not only equity of access.</h2>
-          </div>
-          <figure class="portrait portrait-side">
-            <img src="assets/gita-portrait-side.jpg" alt="Gita Swasti looking back over her shoulder and smiling, against a blue backdrop" width="1000" height="1500" loading="lazy">
-          </figure>
-        </div>
+    <!-- Journey -->
+    <section class="journey" id="journey">
+      <div class="journey-media">
+        <a href="assets/gita-portrait-side.jpg" class="journey-photo zoom" aria-label="View full-size photo">
+          <img src="assets/gita-portrait-side.jpg" alt="Gita Swasti looking back over her shoulder and smiling, against a blue backdrop" width="1000" height="1500" loading="lazy">
+        </a>
+        <blockquote class="journey-quote">“Equity of outcomes, not only equity of access.”</blockquote>
+      </div>
+      <div class="journey-copy">
+        <h2 class="display reveal">My journey<br>into impact</h2>
         <div class="prose reveal">
-          <p>
-            I studied Accounting at the <strong>University of Indonesia</strong> and spent my early career in audit at
-            <strong>KPMG</strong> and <strong>Ernst &amp; Young</strong>, learning how systems hold up under scrutiny and
-            where they quietly fail. I now work across sustainability and social impact with a bias for practical
-            strategy, real budgets, and accountability that does not hide injustice behind tidy averages.
-          </p>
-          <p>
-            Reaching people matters. What matters more is who actually benefits, who stays excluded, and what changes
-            when programs meet structural barriers like geography, disability access, unpaid care work, language, and
-            unequal power in decision-making. I look for work that treats those realities as core design constraints.
-          </p>
-          <p>
-            Outside work, I volunteer as a mentor, facilitator and moderator in education spaces with marginalized
-            communities, showing up for learning that respects lived experience and builds long-term self-reliance.
-          </p>
-          <ul class="facts">
-            <li><span>Education</span>Bachelor's in Accounting, University of Indonesia</li>
-            <li><span>Certified</span>Nature-based Solutions for Disaster &amp; Climate Resilience · Gender and Intersectionality</li>
-            <li><span>Fellowships</span>YSEALI Professional Fellows Program</li>
-            <li><span>Languages</span>Bahasa Indonesia · English · French</li>
-            <li><span>Writing</span><a href="https://svvasti.medium.com/" target="_blank" rel="noopener">svvasti.medium.com</a></li>
-          </ul>
+          <p>I studied Accounting at the <strong>University of Indonesia</strong> and spent my early career in audit at <strong>KPMG</strong> and <strong>Ernst &amp; Young</strong>, learning how systems hold up under scrutiny and where they quietly fail. I now work across sustainability and social impact with a bias for practical strategy, real budgets, and accountability that does not hide injustice behind tidy averages.</p>
+          <p>Reaching people matters. What matters more is who actually benefits, who stays excluded, and what changes when programs meet structural barriers like geography, disability access, unpaid care work, language, and unequal power in decision-making. I look for work that treats those realities as core design constraints.</p>
+          <p>Outside work, I volunteer as a mentor, facilitator and moderator in education spaces with marginalized communities, showing up for learning that respects lived experience and builds long-term self-reliance.</p>
+        </div>
+        <ul class="facts reveal">
+          <li><span>Education</span>Bachelor's in Accounting, University of Indonesia</li>
+          <li><span>Fellowship</span>YSEALI Professional Fellows Program</li>
+          <li><span>Languages</span>Bahasa Indonesia · English · French</li>
+          <li><span>Writing</span><a href="https://svvasti.medium.com/" target="_blank" rel="noopener">svvasti.medium.com</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Wins -->
+    <section class="block block-pink" id="wins">
+      <div class="container">
+        <h2 class="display display-center reveal">Wins I'm proud of</h2>
+        <div class="wins-grid">
+          <article class="win reveal">
+            <div class="win-photo"><img src="assets/kulaku-coconut-training.jpg" alt="Gita opening a coconut-processing training in Muara Sungsang Village" width="1000" height="1333" loading="lazy"></div>
+            <div class="win-body">
+              <h3>Trained<br>100+ coconut farmers</h3>
+              <p>Plus 50+ women in financial literacy, sanitation and household management across Banyuasin.</p>
+              <a href="#area-community" class="pill">View experience</a>
+            </div>
+          </article>
+          <article class="win reveal">
+            <div class="win-photo"><img src="assets/btmi-socialization-2023.jpg" alt="Gita presenting the BTMI scholarship to students in Banyuasin" width="1000" height="1333" loading="lazy"></div>
+            <div class="win-body">
+              <h3>Supported<br>10+ young scholars</h3>
+              <p>Ran the BTMI scholarship for coconut farmers' children, from application to outcome tracking.</p>
+              <a href="#works" class="pill">View project</a>
+            </div>
+          </article>
+          <article class="win reveal">
+            <div class="win-photo"><img src="assets/envirotech-presenting.jpg" alt="Gita presenting at the YSEALI Enviro-Tech Regional Workshop" width="1400" height="933" loading="lazy"></div>
+            <div class="win-body">
+              <h3>YSEALI<br>Professional Fellow</h3>
+              <p>Selected by the U.S. Department of State, alongside the YSEALI Summit and Enviro-Tech workshop.</p>
+              <a href="#honors" class="pill">View honors</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- Practice areas -->
-    <section class="section section-alt" id="practice">
+    <section class="block block-dark" id="practice">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="kicker">02 — Practice areas</p>
-          <h2>Where I work.</h2>
-        </div>
-        <div class="cards">
-          <a class="card reveal" href="#area-philanthropy">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/></svg>
-            </div>
-            <h3>Philanthropic grants &amp; portfolio management</h3>
-            <p>De-risking hyperlocal NGOs, grant-readiness criteria and donor-facing portfolio reporting.</p>
-          </a>
-          <a class="card reveal" href="#area-impact">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M5 19c0-8 5-13 14-14-1 9-6 14-14 14z"/><path d="M5 19l7-7"/></svg>
-            </div>
-            <h3>Social impact &amp; program management</h3>
-            <p>Community funds, women-led environmental leadership and indigenous climate innovation.</p>
-          </a>
-          <a class="card reveal" href="#area-community">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9.5" r="2.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6M15 14.5c3 0 6 1.7 6 5"/></svg>
-            </div>
-            <h3>Community &amp; enterprise development</h3>
-            <p>Farmer training, scholarships and accelerators for social enterprises across Indonesia.</p>
-          </a>
-          <a class="card reveal" href="#area-research">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg>
-            </div>
-            <h3>Research &amp; policy</h3>
-            <p>Intersectional policy research for immigrant and refugee farm programs in Hawaiʻi.</p>
-          </a>
-          <a class="card reveal" href="#area-audit">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
-            </div>
-            <h3>Audit, governance &amp; compliance</h3>
-            <p>Financial-statement audits, internal-control testing and OECD / POJK governance reviews.</p>
-          </a>
-          <a class="card reveal" href="#area-media">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13 7l4 4"/></svg>
-            </div>
-            <h3>Media, communications &amp; writing</h3>
-            <p>Campaign budgets, cross-team delivery and cultural criticism on Indonesian film.</p>
-          </a>
-        </div>
+        <h2 class="display reveal">Where I work</h2>
+        <ol class="practice-list">
+          <li class="reveal"><a href="#area-philanthropy"><span class="practice-num">01</span><span class="practice-name">Philanthropic grants &amp; portfolio management</span><span class="practice-desc">De-risking hyperlocal NGOs, grant-readiness criteria and donor-facing reporting.</span></a></li>
+          <li class="reveal"><a href="#area-impact"><span class="practice-num">02</span><span class="practice-name">Social impact &amp; program management</span><span class="practice-desc">Community funds, women-led environmental leadership and indigenous climate innovation.</span></a></li>
+          <li class="reveal"><a href="#area-community"><span class="practice-num">03</span><span class="practice-name">Community &amp; enterprise development</span><span class="practice-desc">Farmer training, scholarships and accelerators for social enterprises.</span></a></li>
+          <li class="reveal"><a href="#area-research"><span class="practice-num">04</span><span class="practice-name">Research &amp; policy</span><span class="practice-desc">Intersectional policy research for immigrant and refugee farm programs.</span></a></li>
+          <li class="reveal"><a href="#area-audit"><span class="practice-num">05</span><span class="practice-name">Audit, governance &amp; compliance</span><span class="practice-desc">Financial-statement audits, internal controls and OECD / POJK reviews.</span></a></li>
+          <li class="reveal"><a href="#area-media"><span class="practice-num">06</span><span class="practice-name">Media, communications &amp; writing</span><span class="practice-desc">Campaign budgets and cultural criticism on Indonesian film.</span></a></li>
+        </ol>
       </div>
     </section>
 
     <!-- Experience -->
-    <section class="section" id="experience">
+    <section class="block block-cream" id="experience">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="kicker">03 — Experience</p>
-          <h2>Where I've made an impact.</h2>
-        </div>
+        <h2 class="display reveal">Experience</h2>
 
-        <!-- Philanthropic -->
         <div class="area" id="area-philanthropy">
           <h3 class="area-title reveal">Philanthropic grants &amp; portfolio management</h3>
-          <ol class="timeline">
-            <li class="job reveal">
-              <div class="job-meta">
-                <span class="job-date">Mar 2026 — Present</span>
-                <span class="job-place">Gianyar, Bali, Indonesia</span>
-              </div>
-              <div class="job-body">
-                <h4>Head of Portfolio</h4>
-                <p class="org">Black Licorice</p>
-                <p class="job-summary">Leads portfolio strategy for a philanthropic accelerator making early bets on Indonesian founders working in maternal health and malnutrition. Modeled on the Mulago Foundation and the Community Health Impact Coalition, Black Licorice identifies the most promising hyperlocal NGOs, de-risks them, and builds them into institutionally fundable organizations.</p>
-                <ul>
-                  <li>Direct portfolio strategy for a network scaling toward 25 partner NGOs across the archipelago, building on a model that delivered a 19% reduction in childhood stunting across two districts of East Nusa Tenggara (2021–2024), outperforming 18 of 22 comparable districts.</li>
-                  <li>Established due-diligence and grant-readiness criteria used to screen and onboard the accelerator's first cohort of hyperlocal NGO partners in 2026.</li>
-                  <li>Coordinate portfolio-level reporting that consolidates field data from multiple grantees into a single donor-facing view, supporting a leverage-over-scale funding strategy.</li>
-                </ul>
-                <div class="tags"><span>Maternal health</span><span>Due diligence</span><span>Grantmaking</span><span>Non-profit program development</span></div>
-              </div>
-            </li>
-          </ol>
+          <article class="job reveal">
+            <div class="job-meta">
+              <p class="job-date">Mar 2026 — Present</p>
+              <p class="job-place">Gianyar, Bali, Indonesia</p>
+            </div>
+            <div class="job-body">
+              <h4>Head of Portfolio</h4>
+              <p class="org">Black Licorice</p>
+              <p class="job-summary">Leads portfolio strategy for a philanthropic accelerator making early bets on Indonesian founders working in maternal health and malnutrition. Modeled on the Mulago Foundation and the Community Health Impact Coalition, Black Licorice identifies the most promising hyperlocal NGOs, de-risks them, and builds them into institutionally fundable organizations.</p>
+              <ul>
+                <li>Direct portfolio strategy for a network scaling toward 25 partner NGOs across the archipelago, building on a model that delivered a 19% reduction in childhood stunting across two districts of East Nusa Tenggara (2021–2024), outperforming 18 of 22 comparable districts.</li>
+                <li>Established due-diligence and grant-readiness criteria used to screen and onboard the accelerator's first cohort of hyperlocal NGO partners in 2026.</li>
+                <li>Coordinate portfolio-level reporting that consolidates field data from multiple grantees into a single donor-facing view, supporting a leverage-over-scale funding strategy.</li>
+              </ul>
+              <div class="tags"><span>Maternal health</span><span>Due diligence</span><span>Grantmaking</span><span>Non-profit program development</span></div>
+            </div>
+          </article>
         </div>
 
-        <!-- Social impact -->
         <div class="area" id="area-impact">
           <h3 class="area-title reveal">Social impact &amp; program management</h3>
-          <ol class="timeline">
-            <li class="job reveal">
-              <div class="job-meta">
-                <span class="job-date">Jan 2025 — Mar 2026</span>
-                <span class="job-place">Tabanan, Bali, Indonesia</span>
-              </div>
-              <div class="job-body">
-                <h4>Social Impact Manager</h4>
-                <p class="org">Nuanu Social Fund</p>
-                <p class="job-summary">Managed a five-pillar community fund (Living, Nature, Education, Health &amp; Wellness, Arts &amp; Culture), covering rolling-basis grants to Beraban Village and a youth leadership grant program.</p>
-                <ul>
-                  <li>Assessed and funded community project proposals on a rolling basis for Beraban Village, Kediri, Tabanan, over 14 months, matching funding levels to demonstrated community need.</li>
-                  <li>Ran Dana Asa Kriya, a capacity-building program for Bali-based social initiative leaders aged 12 to 35, taking 5 project leaders through structured workshops each cycle and selecting 2 for full project funding.</li>
-                  <li>Implemented an impact measurement framework spanning all five pillars, standardizing how the fund tracked outcomes.</li>
-                </ul>
-                <div class="tags"><span>Community fund</span><span>Grant monitoring</span><span>Youth leadership</span><span>Ogoh-Ogoh cultural integration</span></div>
-              </div>
-            </li>
-            <li class="job reveal">
-              <div class="job-meta">
-                <span class="job-date">Sep 2024 — Dec 2024</span>
-                <span class="job-place">Kuta, Bali, Indonesia</span>
-              </div>
-              <div class="job-body">
-                <h4>Program Manager</h4>
-                <p class="org">Pratisara Bumi Foundation</p>
-                <p class="job-summary">Managed a multi-initiative portfolio spanning sustainable enterprise incubation, women-led environmental leadership, and indigenous climate innovation across eastern Indonesia.</p>
-                <ul>
-                  <li>Managed INKURI (Inkubasi Usaha Lestari), a sustainable-economy incubation initiative supporting youth-led agricultural micro-enterprises across three regencies of Flores (West Manggarai, Nagekeo, Ende), aiming to grow a regenerative economy ecosystem within three years.</li>
-                  <li>Oversaw the Women Earth Alliance partnership's four program lines: the 4-month WEA Indonesia Grassroots Accelerator, the Para Para alumni forum across 6 regional groups, RIPPLE post-program M&amp;E support, and Communal Forest Monitoring pilots in Bali and NTT.</li>
-                  <li>Managed the Indigenous Technology Innovators in Residence &amp; Hackathon, a 4-month journey with 20 young rural innovators and 40 local enablers across 10 regencies, enhancing traditional technologies for climate challenges in wellness, architecture, craft and food.</li>
-                </ul>
-                <div class="tags"><span>Women Earth Alliance</span><span>Climate innovation</span><span>Flores &amp; NTT</span></div>
-              </div>
-            </li>
-          </ol>
+          <article class="job reveal">
+            <div class="job-meta">
+              <p class="job-date">Jan 2025 — Mar 2026</p>
+              <p class="job-place">Tabanan, Bali, Indonesia</p>
+            </div>
+            <div class="job-body">
+              <h4>Social Impact Manager</h4>
+              <p class="org">Nuanu Social Fund</p>
+              <p class="job-summary">Managed a five-pillar community fund (Living, Nature, Education, Health &amp; Wellness, Arts &amp; Culture), covering rolling-basis grants to Beraban Village and a youth leadership grant program.</p>
+              <ul>
+                <li>Assessed and funded community project proposals on a rolling basis for Beraban Village, Kediri, Tabanan, over 14 months, matching funding levels to demonstrated community need.</li>
+                <li>Ran Dana Asa Kriya, a capacity-building program for Bali-based social initiative leaders aged 12 to 35, taking 5 project leaders through structured workshops each cycle and selecting 2 for full project funding.</li>
+                <li>Implemented an impact measurement framework spanning all five pillars, standardizing how the fund tracked outcomes.</li>
+              </ul>
+              <div class="tags"><span>Community fund</span><span>Grant monitoring</span><span>Youth leadership</span><span>Ogoh-Ogoh cultural integration</span></div>
+            </div>
+          </article>
+          <article class="job reveal">
+            <div class="job-meta">
+              <p class="job-date">Sep 2024 — Dec 2024</p>
+              <p class="job-place">Kuta, Bali, Indonesia</p>
+            </div>
+            <div class="job-body">
+              <h4>Program Manager</h4>
+              <p class="org">Pratisara Bumi Foundation</p>
+              <p class="job-summary">Managed a multi-initiative portfolio spanning sustainable enterprise incubation, women-led environmental leadership, and indigenous climate innovation across eastern Indonesia.</p>
+              <ul>
+                <li>Managed INKURI (Inkubasi Usaha Lestari), a sustainable-economy incubation initiative supporting youth-led agricultural micro-enterprises across three regencies of Flores (West Manggarai, Nagekeo, Ende), aiming to grow a regenerative economy ecosystem within three years.</li>
+                <li>Oversaw the Women Earth Alliance partnership's four program lines: the 4-month WEA Indonesia Grassroots Accelerator, the Para Para alumni forum across 6 regional groups, RIPPLE post-program M&amp;E support, and Communal Forest Monitoring pilots in Bali and NTT.</li>
+                <li>Managed the Indigenous Technology Innovators in Residence &amp; Hackathon, a 4-month journey with 20 young rural innovators and 40 local enablers across 10 regencies, enhancing traditional technologies for climate challenges in wellness, architecture, craft and food.</li>
+              </ul>
+              <div class="tags"><span>Women Earth Alliance</span><span>Climate innovation</span><span>Flores &amp; NTT</span></div>
+            </div>
+          </article>
         </div>
 
-        <!-- Community & enterprise -->
         <div class="area" id="area-community">
           <h3 class="area-title reveal">Community &amp; enterprise development</h3>
-          <ol class="timeline">
-            <li class="job reveal">
-              <div class="job-meta">
-                <span class="job-date">Sep 2022 — Aug 2024</span>
-                <span class="job-place">Palembang, South Sumatra</span>
-              </div>
-              <div class="job-body">
-                <h4>Impact Lead</h4>
-                <p class="org">Kulaku Indonesia</p>
-                <p class="job-summary">Led training delivery and impact measurement for a coconut-farmer social enterprise, running a scholarship program and women's capacity-building curriculum alongside a 500+ farmer network.</p>
-                <ul>
-                  <li>Delivered training to 100+ coconut farmers on improved farming techniques and 50+ women on financial literacy, water sanitation, basic writing and household management across Banyuasin Regency.</li>
-                  <li>Administered the BTMI (Beasiswa Tunas Muda Indonesia) scholarship for farmers' children over 2 years, from application to disbursement and outcome tracking, supporting 10+ recipients.</li>
-                  <li>Built consolidated impact reporting across training, women's programs and scholarships, giving leadership a single view of beneficiary reach.</li>
-                  <li>Supported farmers across the whole growing cycle, from seed selection, seedling care and land preparation to maintenance and fruit sorting.</li>
-                </ul>
-                <figure class="job-photo">
-                  <a href="assets/kulaku-coconut-training.jpg" class="zoom" aria-label="View full-size photo: coconut-processing training in Muara Sungsang Village">
-                    <img src="assets/kulaku-coconut-training.jpg" alt="Gita greeting participants at a coconut-processing training in Muara Sungsang Village, in front of a Kulaku community empowerment banner" width="1000" height="1333" loading="lazy">
-                  </a>
-                  <figcaption>Opening a coconut-processing training for the Cahaya business group in Muara Sungsang Village, Banyuasin, with Kulaku and YBM PLN.</figcaption>
-                </figure>
-                <div class="tags"><span>Livelihoods</span><span>Scholarships</span><span>Learning design</span><span>M&amp;E</span></div>
-              </div>
-            </li>
-            <li class="job reveal">
-              <div class="job-meta">
-                <span class="job-date">Feb 2021 — Sep 2022</span>
-                <span class="job-place">Jakarta, Indonesia · Remote</span>
-              </div>
-              <div class="job-body">
-                <h4>Enterprise Development Officer / Project Officer</h4>
-                <p class="org">Instellar Indonesia</p>
-                <p class="job-roles"><span>Enterprise Development Officer · Jan – Sep 2022</span><span>Project Officer · Feb – Dec 2021</span></p>
-                <p class="job-summary">Managed a six-program portfolio of accelerator and capacity-building initiatives for social enterprises, handling RFPs, grants, and funder and vendor relationships.</p>
-                <ul>
-                  <li>Managed the Hyundai Startup Challenge, a 7-month national accelerator, across the 2021 and 2022 cohorts of social enterprises in employment, environment and education.</li>
-                  <li>Ran the Instellar and IKEA Social Entrepreneurship Indonesia Accelerator, a 24-month program growing the quality and number of social enterprises outside Java, with a focus on the circular economy.</li>
-                  <li>Delivered four more concurrent programs: ImpactX by Crevisse (B Corp certification, sustainable cross-border trade and investor readiness), the UK FCDO Tech Hub Cyber Security for Women program (training, mentorship and cyber hygiene), a COVID Recovery Programme for Hyundai Startup Challenge 2020 alumni, and the Rikolto Foodpreneur Generation Program, an ideation program built on the SEED starter modules.</li>
-                </ul>
-                <div class="tags"><span>Accelerators</span><span>Grant monitoring</span><span>Economic development</span><span>UK FCDO</span></div>
-              </div>
-            </li>
-            <li class="job reveal">
-              <div class="job-meta">
-                <span class="job-date">Oct 2020 — Jan 2021</span>
-                <span class="job-place">Indonesia · Remote</span>
-              </div>
-              <div class="job-body">
-                <h4>Project Officer</h4>
-                <p class="org">Kinara Indonesia</p>
-                <p class="job-summary">Supported two national and regional youth and women's economic-empowerment programs, managing implementation logistics and government stakeholder relationships.</p>
-                <ul>
-                  <li>Supported delivery of Youth Co:Lab Indonesia, a UNDP and Citi Foundation program advancing SDG-aligned youth leadership, social innovation and entrepreneurship.</li>
-                  <li>Contributed to WEAVE by the Cherie Blair Foundation, a digital-technology program that reached over 12,000 women running small businesses across Vietnam and Indonesia.</li>
-                  <li>Managed short-term contracts and budget-implementation monitoring across both programs.</li>
-                </ul>
-                <div class="tags"><span>UNDP</span><span>Women's enterprise</span><span>SDGs</span></div>
-              </div>
-            </li>
-          </ol>
+          <article class="job reveal">
+            <div class="job-meta">
+              <p class="job-date">Sep 2022 — Aug 2024</p>
+              <p class="job-place">Palembang, South Sumatra</p>
+            </div>
+            <div class="job-body">
+              <h4>Impact Lead</h4>
+              <p class="org">Kulaku Indonesia</p>
+              <p class="job-summary">Led training delivery and impact measurement for a coconut-farmer social enterprise, running a scholarship program and women's capacity-building curriculum alongside a 500+ farmer network.</p>
+              <ul>
+                <li>Delivered training to 100+ coconut farmers on improved farming techniques and 50+ women on financial literacy, water sanitation, basic writing and household management across Banyuasin Regency.</li>
+                <li>Administered the BTMI (Beasiswa Tunas Muda Indonesia) scholarship for farmers' children over 2 years, from application to disbursement and outcome tracking, supporting 10+ recipients.</li>
+                <li>Built consolidated impact reporting across training, women's programs and scholarships, giving leadership a single view of beneficiary reach.</li>
+                <li>Supported farmers across the whole growing cycle, from seed selection, seedling care and land preparation to maintenance and fruit sorting.</li>
+              </ul>
+              <figure class="job-photo">
+                <a href="assets/kulaku-coconut-training.jpg" class="zoom" aria-label="View full-size photo: coconut-processing training in Muara Sungsang Village">
+                  <img src="assets/kulaku-coconut-training.jpg" alt="Gita greeting participants at a coconut-processing training in Muara Sungsang Village, in front of a Kulaku community empowerment banner" width="1000" height="1333" loading="lazy">
+                </a>
+                <figcaption>Opening a coconut-processing training for the Cahaya business group in Muara Sungsang Village, Banyuasin, with Kulaku and YBM PLN.</figcaption>
+              </figure>
+              <div class="tags"><span>Livelihoods</span><span>Scholarships</span><span>Learning design</span><span>M&amp;E</span></div>
+            </div>
+          </article>
+          <article class="job reveal">
+            <div class="job-meta">
+              <p class="job-date">Feb 2021 — Sep 2022</p>
+              <p class="job-place">Jakarta, Indonesia · Remote</p>
+            </div>
+            <div class="job-body">
+              <h4>Enterprise Development Officer / Project Officer</h4>
+              <p class="org">Instellar Indonesia</p>
+              <p class="job-roles"><span>Enterprise Development Officer · Jan – Sep 2022</span><span>Project Officer · Feb – Dec 2021</span></p>
+              <p class="job-summary">Managed a six-program portfolio of accelerator and capacity-building initiatives for social enterprises, handling RFPs, grants, and funder and vendor relationships.</p>
+              <ul>
+                <li>Managed the Hyundai Startup Challenge, a 7-month national accelerator, across the 2021 and 2022 cohorts of social enterprises in employment, environment and education.</li>
+                <li>Ran the Instellar and IKEA Social Entrepreneurship Indonesia Accelerator, a 24-month program growing the quality and number of social enterprises outside Java, with a focus on the circular economy.</li>
+                <li>Delivered four more concurrent programs: ImpactX by Crevisse (B Corp certification, sustainable cross-border trade and investor readiness), the UK FCDO Tech Hub Cyber Security for Women program (training, mentorship and cyber hygiene), a COVID Recovery Programme for Hyundai Startup Challenge 2020 alumni, and the Rikolto Foodpreneur Generation Program, an ideation program built on the SEED starter modules.</li>
+              </ul>
+              <div class="tags"><span>Accelerators</span><span>Grant monitoring</span><span>Economic development</span><span>UK FCDO</span></div>
+            </div>
+          </article>
+          <article class="job reveal">
+            <div class="job-meta">
+              <p class="job-date">Oct 2020 — Jan 2021</p>
+              <p class="job-place">Indonesia · Remote</p>
+            </div>
+            <div class="job-body">
+              <h4>Project Officer</h4>
+              <p class="org">Kinara Indonesia</p>
+              <p class="job-summary">Supported two national and regional youth and women's economic-empowerment programs, managing implementation logistics and government stakeholder relationships.</p>
+              <ul>
+                <li>Supported delivery of Youth Co:Lab Indonesia, a UNDP and Citi Foundation program advancing SDG-aligned youth leadership, social innovation and entrepreneurship.</li>
+                <li>Contributed to WEAVE by the Cherie Blair Foundation, a digital-technology program that reached over 12,000 women running small businesses across Vietnam and Indonesia.</li>
+                <li>Managed short-term contracts and budget-implementation monitoring across both programs.</li>
+              </ul>
+              <div class="tags"><span>UNDP</span><span>Women's enterprise</span><span>SDGs</span></div>
+            </div>
+          </article>
         </div>
 
-        <!-- Research -->
         <div class="area" id="area-research">
           <h3 class="area-title reveal">Research &amp; policy</h3>
-          <ol class="timeline">
-            <li class="job reveal">
-              <div class="job-meta">
-                <span class="job-date">Apr 2024 — Jun 2024</span>
-                <span class="job-place">Honolulu, Hawaiʻi, USA</span>
-              </div>
-              <div class="job-body">
-                <h4>Visiting Research Fellow</h4>
-                <p class="org">Pacific Gateway Center</p>
-                <p class="job-summary">Produced an intersectional policy research report to inform a new immigrant and refugee farm program in Haleiwa, Oahu, benchmarked against comparable US nonprofit farm programs.</p>
-                <ul>
-                  <li>Placed through the YSEALI Professional Fellows Program (Economic Empowerment theme) in PGC's Social Enterprise Program, which supports ventures creating jobs for vulnerable populations.</li>
-                  <li>Analyzed the existing Kunia, Oahu farm program, which leases 176 acres to refugee and immigrant families, against comparable US nonprofit programs, delivering a modernized policy brief used to pitch the new Haleiwa program.</li>
-                  <li>Built an intersectional framework examining how race, gender, socioeconomic status and immigration status shape outcomes for immigrant and refugee farm owners.</li>
-                  <li>Delivered the final brief on schedule, giving the Center ready-to-use language for future funding proposals.</li>
-                </ul>
-                <div class="tags"><span>Policy brief</span><span>Intersectionality</span><span>YSEALI</span></div>
-              </div>
-            </li>
-            <li class="job reveal">
-              <div class="job-meta">
-                <span class="job-date">2017 — Jan 2019</span>
-                <span class="job-place">Depok, Indonesia</span>
-              </div>
-              <div class="job-body">
-                <h4>Research Assistant</h4>
-                <p class="org">Department of Accounting, Universitas Indonesia</p>
-                <ul>
-                  <li>Supported department research projects over two years, in parallel with a full undergraduate course load in Accounting.</li>
-                </ul>
-              </div>
-            </li>
-          </ol>
+          <article class="job reveal">
+            <div class="job-meta">
+              <p class="job-date">Apr 2024 — Jun 2024</p>
+              <p class="job-place">Honolulu, Hawaiʻi, USA</p>
+            </div>
+            <div class="job-body">
+              <h4>Visiting Research Fellow</h4>
+              <p class="org">Pacific Gateway Center</p>
+              <p class="job-summary">Produced an intersectional policy research report to inform a new immigrant and refugee farm program in Haleiwa, Oahu, benchmarked against comparable US nonprofit farm programs.</p>
+              <ul>
+                <li>Placed through the YSEALI Professional Fellows Program (Economic Empowerment theme) in PGC's Social Enterprise Program, which supports ventures creating jobs for vulnerable populations.</li>
+                <li>Analyzed the existing Kunia, Oahu farm program, which leases 176 acres to refugee and immigrant families, against comparable US nonprofit programs, delivering a modernized policy brief used to pitch the new Haleiwa program.</li>
+                <li>Built an intersectional framework examining how race, gender, socioeconomic status and immigration status shape outcomes for immigrant and refugee farm owners.</li>
+                <li>Delivered the final brief on schedule, giving the Center ready-to-use language for future funding proposals.</li>
+              </ul>
+              <div class="tags"><span>Policy brief</span><span>Intersectionality</span><span>YSEALI</span></div>
+            </div>
+          </article>
+          <article class="job reveal">
+            <div class="job-meta">
+              <p class="job-date">2017 — Jan 2019</p>
+              <p class="job-place">Depok, Indonesia</p>
+            </div>
+            <div class="job-body">
+              <h4>Research Assistant</h4>
+              <p class="org">Department of Accounting, Universitas Indonesia</p>
+              <ul>
+                <li>Supported department research projects over two years, in parallel with a full undergraduate course load in Accounting.</li>
+              </ul>
+            </div>
+          </article>
         </div>
 
-        <!-- Audit -->
         <div class="area" id="area-audit">
           <h3 class="area-title reveal">Audit, governance &amp; compliance</h3>
-          <ol class="timeline">
-            <li class="job reveal">
-              <div class="job-meta">
-                <span class="job-date">Dec 2019 — Apr 2020</span>
-                <span class="job-place">Indonesia</span>
-              </div>
-              <div class="job-body">
-                <h4>Auditor</h4>
-                <p class="org">Ernst &amp; Young Global Consulting Services</p>
-                <ul>
-                  <li>Completed audit workpapers and documented test results and findings across client engagements.</li>
-                  <li>Appraised internal control systems via structured audit questionnaires, feeding policy and procedure recommendations into final audit reports.</li>
-                  <li>Verified client assets and liabilities against source documentation, confirming internal-control compliance.</li>
-                </ul>
-              </div>
-            </li>
-            <li class="job reveal">
-              <div class="job-meta">
-                <span class="job-date">Nov 2018 — Nov 2019</span>
-                <span class="job-place">Indonesia</span>
-              </div>
-              <div class="job-body">
-                <h4>Audit Associate</h4>
-                <p class="org">KPMG Indonesia</p>
-                <ul>
-                  <li>Analyzed financial statements and internal operations for accuracy, compliance and risk exposure.</li>
-                  <li>Planned and executed audit test procedures across multiple client engagements.</li>
-                  <li>Co-authored final audit reports with process-improvement recommendations, communicated directly to clients.</li>
-                </ul>
-                <p class="job-note">Joined full-time after an audit internship at KPMG earlier in 2018.</p>
-              </div>
-            </li>
-            <li class="job reveal">
-              <div class="job-meta">
-                <span class="job-date">Dec 2017 — Mar 2018</span>
-                <span class="job-place">Jakarta, Indonesia</span>
-              </div>
-              <div class="job-body">
-                <h4>Corporate Governance Specialist</h4>
-                <p class="org">PT. Sinergi Daya Prima</p>
-                <ul>
-                  <li>Reviewed internal procedures and policies for alignment with OECD principles and Indonesian Financial Services Authority (POJK) governance regulation.</li>
-                </ul>
-              </div>
-            </li>
-            <li class="job reveal">
-              <div class="job-meta">
-                <span class="job-date">Jul 2015 — Aug 2015</span>
-                <span class="job-place">Jakarta, Indonesia</span>
-              </div>
-              <div class="job-body">
-                <h4>Audit Internship</h4>
-                <p class="org">PT Prodigi Konsultan</p>
-                <ul>
-                  <li>Supported statutory audits of public-sector and government-affiliated bodies, and examined the finances of private businesses working with government, alongside chartered and certified accountants such as the National Audit Office.</li>
-                </ul>
-              </div>
-            </li>
-          </ol>
+          <article class="job reveal">
+            <div class="job-meta">
+              <p class="job-date">Dec 2019 — Apr 2020</p>
+              <p class="job-place">Indonesia</p>
+            </div>
+            <div class="job-body">
+              <h4>Auditor</h4>
+              <p class="org">Ernst &amp; Young Global Consulting Services</p>
+              <ul>
+                <li>Completed audit workpapers and documented test results and findings across client engagements.</li>
+                <li>Appraised internal control systems via structured audit questionnaires, feeding policy and procedure recommendations into final audit reports.</li>
+                <li>Verified client assets and liabilities against source documentation, confirming internal-control compliance.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="job reveal">
+            <div class="job-meta">
+              <p class="job-date">Nov 2018 — Nov 2019</p>
+              <p class="job-place">Indonesia</p>
+            </div>
+            <div class="job-body">
+              <h4>Audit Associate</h4>
+              <p class="org">KPMG Indonesia</p>
+              <ul>
+                <li>Analyzed financial statements and internal operations for accuracy, compliance and risk exposure.</li>
+                <li>Planned and executed audit test procedures across multiple client engagements.</li>
+                <li>Co-authored final audit reports with process-improvement recommendations, communicated directly to clients.</li>
+              </ul>
+              <p class="job-note">Joined full-time after an audit internship at KPMG earlier in 2018.</p>
+            </div>
+          </article>
+          <article class="job reveal">
+            <div class="job-meta">
+              <p class="job-date">Dec 2017 — Mar 2018</p>
+              <p class="job-place">Jakarta, Indonesia</p>
+            </div>
+            <div class="job-body">
+              <h4>Corporate Governance Specialist</h4>
+              <p class="org">PT. Sinergi Daya Prima</p>
+              <ul>
+                <li>Reviewed internal procedures and policies for alignment with OECD principles and Indonesian Financial Services Authority (POJK) governance regulation.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="job reveal">
+            <div class="job-meta">
+              <p class="job-date">Jul 2015 — Aug 2015</p>
+              <p class="job-place">Jakarta, Indonesia</p>
+            </div>
+            <div class="job-body">
+              <h4>Audit Internship</h4>
+              <p class="org">PT Prodigi Konsultan</p>
+              <ul>
+                <li>Supported statutory audits of public-sector and government-affiliated bodies, and examined the finances of private businesses working with government, alongside chartered and certified accountants such as the National Audit Office.</li>
+              </ul>
+            </div>
+          </article>
         </div>
 
-        <!-- Media -->
         <div class="area" id="area-media">
           <h3 class="area-title reveal">Media, communications &amp; writing</h3>
-          <ol class="timeline">
-            <li class="job reveal">
-              <div class="job-meta">
-                <span class="job-date">2018 — 2019</span>
-                <span class="job-place">Jakarta, Indonesia</span>
-              </div>
-              <div class="job-body">
-                <h4>Manager &amp; Contributing Writer</h4>
-                <p class="org">Infoscreening</p>
-                <p class="job-roles"><span>Manager · Part-time · 2018 – May 2019</span><span>Contributing Writer · Freelance · 2018 – 2019</span></p>
-                <p class="job-summary">A mass-media community sharing information about alternative screenings and film festivals in Indonesia since 2012.</p>
-                <ul>
-                  <li>Held stewardship of client media budgets, including signed media authorizations and post-buy reporting.</li>
-                  <li>Coordinated account, creative and activation-producer teams to deliver client campaigns and special projects on time.</li>
-                  <li>Published cultural criticism, including pieces on the film <em>Laut Bercerita</em> (The Sea Speaks His Name), the <em>Keluarga ala Indonesia</em> anthology launch, and a documentary on Kampung MacArthur's place in Indonesian history. <a href="https://infoscreening.co/author/swasti/" target="_blank" rel="noopener">Read the articles →</a></li>
-                </ul>
-                <div class="tags"><span>Media budgets</span><span>Film criticism</span></div>
-              </div>
-            </li>
-          </ol>
+          <article class="job reveal">
+            <div class="job-meta">
+              <p class="job-date">2018 — 2019</p>
+              <p class="job-place">Jakarta, Indonesia</p>
+            </div>
+            <div class="job-body">
+              <h4>Manager &amp; Contributing Writer</h4>
+              <p class="org">Infoscreening</p>
+              <p class="job-roles"><span>Manager · Part-time · 2018 – May 2019</span><span>Contributing Writer · Freelance · 2018 – 2019</span></p>
+              <p class="job-summary">A mass-media community sharing information about alternative screenings and film festivals in Indonesia since 2012.</p>
+              <ul>
+                <li>Held stewardship of client media budgets, including signed media authorizations and post-buy reporting.</li>
+                <li>Coordinated account, creative and activation-producer teams to deliver client campaigns and special projects on time.</li>
+                <li>Published cultural criticism, including pieces on the film <em>Laut Bercerita</em> (The Sea Speaks His Name), the <em>Keluarga ala Indonesia</em> anthology launch, and a documentary on Kampung MacArthur's place in Indonesian history. <a href="https://infoscreening.co/author/swasti/" target="_blank" rel="noopener">Read the articles →</a></li>
+              </ul>
+              <div class="tags"><span>Media budgets</span><span>Film criticism</span></div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Projects -->
-    <section class="section section-alt" id="projects">
+    <!-- Works -->
+    <section class="block block-blue" id="works">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="kicker">04 — Projects</p>
-          <h2>Projects I've led and shaped.</h2>
-        </div>
-        <div class="project-grid">
-          <article class="project project-has-photo reveal">
-            <a href="assets/btmi-socialization-2023.jpg" class="project-photo zoom" aria-label="View full-size photo: BTMI scholarship socialization">
+        <h2 class="works-title reveal">My Works</h2>
+        <div class="works-grid">
+          <article class="work reveal">
+            <a href="assets/btmi-socialization-2023.jpg" class="work-media zoom" aria-label="View full-size photo: BTMI scholarship socialization">
               <img src="assets/btmi-socialization-2023.jpg" alt="Gita presenting the Beasiswa Tunas Muda Indonesia scholarship to students in a classroom in Banyuasin, 2023" width="1000" height="1333" loading="lazy">
             </a>
-            <div class="project-body">
-            <p class="project-date">Mar 2023 — Present</p>
-            <h3>Beasiswa Tunas Muda Indonesia (BTMI)</h3>
-            <p class="project-org">Kulaku Indonesia</p>
-            <p>A scholarship for middle-school children of coconut farmers in Banyuasin Regency, South Sumatra, running since 2020. In its third year the program committed fully to improving education quality for farmer families, in line with SDG 4, with fair, non-discriminatory selection. Pictured: introducing the scholarship to students in Banyuasin, 2023.</p>
-            <div class="tags"><span>Scholarships</span><span>SDG 4</span><span>MEL</span></div>
-            </div>
+            <p class="work-date">Mar 2023 — Present · Kulaku Indonesia</p>
+            <h3>Beasiswa Tunas Muda Indonesia</h3>
+            <p>A scholarship for middle-school children of coconut farmers in Banyuasin Regency, South Sumatra, running since 2020. In its third year the program committed fully to improving education quality for farmer families, in line with SDG 4, with fair, non-discriminatory selection.</p>
           </article>
-          <article class="project reveal">
-            <p class="project-date">Jun 2023 — Present</p>
+          <article class="work reveal">
+            <div class="work-media work-tile tile-orange" aria-hidden="true"><span>Reborn<br>Décor</span></div>
+            <p class="work-date">Jun 2023 — Present · with Thom and Trang</p>
             <h3>Reborn Décor Exhibition</h3>
-            <p class="project-org">YSEALI Enviro-Tech post-program · with Thom and Trang</p>
-            <p>Combines waste management, recycling education, creative expression and charity to raise environmental awareness and support disadvantaged children. Two exhibitions, in Vietnam and Indonesia, with design workshops where students from both countries turn environmental issues into new products. Funded by the U.S. Embassy.</p>
-            <div class="tags"><span>Circular design</span><span>Cross-border</span><span>Education</span></div>
+            <p>A YSEALI Enviro-Tech post-program project combining waste management, recycling education, creative expression and charity. Two exhibitions, in Vietnam and Indonesia, with design workshops where students turn environmental issues into new products. Funded by the U.S. Embassy.</p>
           </article>
-          <article class="project reveal">
-            <p class="project-date">Jul 2022 — Dec 2022</p>
+          <article class="work reveal">
+            <div class="work-media work-tile tile-maroon" aria-hidden="true"><span>Labirin<br>Sriwijaya</span></div>
+            <p class="work-date">Jul 2022 — Dec 2022</p>
             <h3>Labirin Sriwijaya</h3>
-            <p class="project-org">Laboratorium Wirausaha dan Inovasi Sosial Sriwijaya</p>
-            <p>An intensive socio-preneur bootcamp for young people in South Sumatra, with expert mentoring and links into the regional entrepreneurship ecosystem. Run with Purna Caraka Muda Indonesia Sumatra Selatan, Dinas Pemuda dan Olahraga, and Bank Indonesia Sumatera Selatan.</p>
-            <div class="tags"><span>Bootcamp</span><span>Youth</span><span>Social enterprise</span></div>
+            <p>Laboratorium Wirausaha dan Inovasi Sosial Sriwijaya: an intensive socio-preneur bootcamp for young people in South Sumatra, run with Purna Caraka Muda Indonesia Sumatra Selatan, Dinas Pemuda dan Olahraga, and Bank Indonesia Sumatera Selatan.</p>
           </article>
-          <article class="project reveal">
-            <p class="project-date">Feb 2021 — Aug 2022</p>
+          <article class="work reveal">
+            <div class="work-media work-tile tile-pink" aria-hidden="true"><span>Hyundai<br>Startup<br>Challenge</span></div>
+            <p class="work-date">Feb 2021 — Aug 2022 · Instellar Indonesia</p>
             <h3>Hyundai Startup Challenge Indonesia</h3>
-            <p class="project-org">Instellar Indonesia</p>
             <p>An accelerator and challenge competition by Hyundai Motor Group with People and Peace Link, MYSC, Instellar and Community Chest of Korea, nurturing young social entrepreneurs in environment, employment, electric vehicles and healthcare. Responsible for the 2021 and 2022 cohorts.</p>
-            <div class="tags"><span>Accelerator</span><span>Social entrepreneurs</span></div>
           </article>
         </div>
       </div>
     </section>
 
     <!-- Writing -->
-    <section class="section" id="writing">
+    <section class="block block-dark" id="writing">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="kicker">05 — Writing</p>
-          <h2>Thinking out loud.</h2>
-        </div>
-        <a class="essay essay-featured reveal" href="https://nuturang.substack.com/p/membentuk-raksasa-bersama-refleksi" target="_blank" rel="noopener">
+        <h2 class="display reveal">Words I've written</h2>
+        <a class="essay-featured reveal" href="https://nuturang.substack.com/p/membentuk-raksasa-bersama-refleksi" target="_blank" rel="noopener">
           <p class="essay-badge">★ My proudest piece of writing</p>
-          <p class="essay-meta"><span>Nuturang · Substack</span><span class="essay-lang">Bahasa Indonesia</span></p>
           <h3>Membentuk Raksasa Bersama</h3>
           <p class="essay-en">Shaping a Giant Together — a reflection</p>
-          <span class="essay-cta">Read on Substack <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+          <p class="essay-meta">Nuturang · Substack · Bahasa Indonesia</p>
+          <span class="pill pill-dark">Read on Substack</span>
         </a>
-        <div class="essay-grid">
-          <a class="essay reveal" href="https://svvasti.medium.com/the-data-has-a-baby-on-her-hip-56c1199cd41d" target="_blank" rel="noopener">
-            <p class="essay-meta"><span>Medium</span><span class="essay-lang">English</span></p>
-            <h3>The Data Has a Baby on Her Hip</h3>
-            <span class="essay-cta">Read on Medium <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
-          </a>
-          <a class="essay reveal" href="https://svvasti.medium.com/calm-for-whom-the-economy-of-feeling-and-inequality-5f7a32d253e9" target="_blank" rel="noopener">
-            <p class="essay-meta"><span>Medium</span><span class="essay-lang">English</span></p>
-            <h3>Calm for Whom? The Economy of Feeling and Inequality</h3>
-            <span class="essay-cta">Read on Medium <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
-          </a>
-          <a class="essay reveal" href="https://svvasti.medium.com/kapitalisme-gender-dan-upaya-memaknai-kelas-menengah-f657991a4877" target="_blank" rel="noopener">
-            <p class="essay-meta"><span>Medium</span><span class="essay-lang">Bahasa Indonesia</span></p>
-            <h3>Kapitalisme, Gender, dan Upaya Memaknai Kelas Menengah</h3>
-              <p class="essay-en">Capitalism, Gender, and Making Sense of the Middle Class</p>
-            <span class="essay-cta">Read on Medium <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
-          </a>
-          <a class="essay reveal" href="https://svvasti.medium.com/maskulinitas-dan-ruang-laki-laki-990befe5eca1" target="_blank" rel="noopener">
-            <p class="essay-meta"><span>Medium</span><span class="essay-lang">Bahasa Indonesia</span></p>
-            <h3>Maskulinitas dan Ruang Laki-Laki</h3>
-              <p class="essay-en">Masculinity and Men's Spaces</p>
-            <span class="essay-cta">Read on Medium <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
-          </a>
-        </div>
-        <p class="essay-more reveal"><a href="https://svvasti.medium.com/" target="_blank" rel="noopener">More writing on Medium →</a></p>
+        <ul class="essay-list">
+          <li class="reveal"><a href="https://svvasti.medium.com/the-data-has-a-baby-on-her-hip-56c1199cd41d" target="_blank" rel="noopener">
+            <span class="essay-title">The Data Has a Baby on Her Hip</span>
+            <span class="essay-meta">Medium · English</span>
+            <span class="essay-arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li class="reveal"><a href="https://svvasti.medium.com/calm-for-whom-the-economy-of-feeling-and-inequality-5f7a32d253e9" target="_blank" rel="noopener">
+            <span class="essay-title">Calm for Whom? The Economy of Feeling and Inequality</span>
+            <span class="essay-meta">Medium · English</span>
+            <span class="essay-arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li class="reveal"><a href="https://svvasti.medium.com/kapitalisme-gender-dan-upaya-memaknai-kelas-menengah-f657991a4877" target="_blank" rel="noopener">
+            <span class="essay-title">Kapitalisme, Gender, dan Upaya Memaknai Kelas Menengah <em>Capitalism, Gender, and Making Sense of the Middle Class</em></span>
+            <span class="essay-meta">Medium · Bahasa Indonesia</span>
+            <span class="essay-arrow" aria-hidden="true">↗</span>
+          </a></li>
+          <li class="reveal"><a href="https://svvasti.medium.com/maskulinitas-dan-ruang-laki-laki-990befe5eca1" target="_blank" rel="noopener">
+            <span class="essay-title">Maskulinitas dan Ruang Laki-Laki <em>Masculinity and Men's Spaces</em></span>
+            <span class="essay-meta">Medium · Bahasa Indonesia</span>
+            <span class="essay-arrow" aria-hidden="true">↗</span>
+          </a></li>
+        </ul>
+        <p class="essay-more reveal"><a href="https://svvasti.medium.com/" target="_blank" rel="noopener" class="link-underline">More writing on Medium</a></p>
       </div>
     </section>
 
     <!-- Skills -->
-    <section class="section section-alt" id="skills">
+    <section class="block block-orange" id="skills">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="kicker">06 — Skills</p>
-          <h2>What I bring to a team.</h2>
-        </div>
+        <h2 class="display reveal">What I bring</h2>
         <div class="skill-groups">
           <div class="skill-group reveal">
             <h3>Program &amp; portfolio management</h3>
@@ -574,15 +505,12 @@
     </section>
 
     <!-- Honors -->
-    <section class="section" id="honors">
+    <section class="block block-pink" id="honors">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="kicker">07 — Honors &amp; awards</p>
-          <h2>Recognition along the way.</h2>
-        </div>
+        <h2 class="display reveal">Recognition</h2>
         <div class="honor-list">
           <article class="honor reveal">
-            <p class="honor-date">Apr 2024</p>
+            <p class="honor-date"><span>Apr</span> <span>2024</span></p>
             <div>
               <h3>YSEALI Professional Fellows Program</h3>
               <p class="honor-issuer">Bureau of Educational and Cultural Affairs, U.S. Department of State · with Pacific Gateway Center</p>
@@ -590,7 +518,7 @@
             </div>
           </article>
           <article class="honor reveal">
-            <p class="honor-date">Feb 2024</p>
+            <p class="honor-date"><span>Feb</span> <span>2024</span></p>
             <div>
               <h3>Professional Development Grant Awardee — YSEALI Summit 2023</h3>
               <p class="honor-issuer">U.S. Embassy</p>
@@ -598,7 +526,7 @@
             </div>
           </article>
           <article class="honor reveal">
-            <p class="honor-date">Dec 2023</p>
+            <p class="honor-date"><span>Dec</span> <span>2023</span></p>
             <div>
               <h3>YSEALI Summit 2023</h3>
               <p class="honor-issuer">U.S. Embassy</p>
@@ -606,7 +534,7 @@
             </div>
           </article>
           <article class="honor reveal">
-            <p class="honor-date">Jun 2023</p>
+            <p class="honor-date"><span>Jun</span> <span>2023</span></p>
             <div>
               <h3>YSEALI Enviro-Tech Regional Workshop</h3>
               <p class="honor-issuer">U.S. Embassy</p>
@@ -625,7 +553,7 @@
             </div>
           </article>
           <article class="honor reveal">
-            <p class="honor-date">Sep 2018</p>
+            <p class="honor-date"><span>Sep</span> <span>2018</span></p>
             <div>
               <h3>AKATARA Indonesian Film Financing Forum</h3>
               <p class="honor-issuer">Badan Ekonomi Kreatif RI · with Infoscreening</p>
@@ -637,66 +565,60 @@
     </section>
 
     <!-- Volunteering -->
-    <section class="section section-alt" id="volunteering">
+    <section class="block block-cream" id="volunteering">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="kicker">08 — Volunteering</p>
-          <h2>Showing up beyond the job.</h2>
-        </div>
+        <h2 class="display reveal">Beyond the job</h2>
         <div class="vol-grid">
           <article class="vol reveal">
-            <p class="vol-meta"><span>Oct 2023 — Dec 2023</span><span class="vol-cause">Economic empowerment</span></p>
+            <p class="vol-meta">Oct 2023 — Dec 2023 · <strong>Economic empowerment</strong></p>
             <h3>Mentor</h3>
-            <p class="project-org">Academy for Women Entrepreneurs (AWE)</p>
+            <p class="vol-org">Academy for Women Entrepreneurs (AWE)</p>
             <p>Mentored in AWE Indonesia, a 5-month U.S. Department of State program combining the DreamBuilder platform with in-class mentoring for women entrepreneurs in Ende, East Nusa Tenggara, and Aceh.</p>
           </article>
           <article class="vol reveal">
-            <p class="vol-meta"><span>Jun 2020 — Feb 2023</span><span class="vol-cause">Education</span></p>
+            <p class="vol-meta">Jun 2020 — Feb 2023 · <strong>Education</strong></p>
             <h3>Finance Mentor</h3>
-            <p class="project-org">dikembang</p>
+            <p class="vol-org">dikembang</p>
             <p>Gave personalized financial-management mentoring to small and medium enterprises facing the challenges of the COVID-19 pandemic.</p>
           </article>
           <article class="vol reveal">
-            <p class="vol-meta"><span>Aug 2018 — 2019</span><span class="vol-cause">Arts &amp; culture</span></p>
+            <p class="vol-meta">Aug 2018 — 2019 · <strong>Arts &amp; culture</strong></p>
             <h3>Volunteer</h3>
-            <p class="project-org">ARKIPEL — Jakarta International Documentary &amp; Experimental Film Festival</p>
+            <p class="vol-org">ARKIPEL — Jakarta International Documentary &amp; Experimental Film Festival</p>
             <p>Supported a festival by Forum Lenteng that reads global social, political, economic and cultural phenomena through documentary and experimental cinema.</p>
           </article>
           <article class="vol reveal">
-            <p class="vol-meta"><span>Feb 2017 — Nov 2018</span><span class="vol-cause">Economic empowerment</span></p>
+            <p class="vol-meta">Feb 2017 — Nov 2018 · <strong>Economic empowerment</strong></p>
             <h3>Communication</h3>
-            <p class="project-org">Gerakan Tenunkoe</p>
+            <p class="vol-org">Gerakan Tenunkoe</p>
             <p>Handled communications for a movement helping marginalized women weavers in East Nusa Tenggara grow from weavers into weaving-business owners.</p>
           </article>
           <article class="vol reveal">
-            <p class="vol-meta"><span>Feb 2017 — Nov 2018</span><span class="vol-cause">Human rights</span></p>
+            <p class="vol-meta">Feb 2017 — Nov 2018 · <strong>Human rights</strong></p>
             <h3>Content Planner for Publication</h3>
-            <p class="project-org">Get Happy Indonesia</p>
+            <p class="vol-org">Get Happy Indonesia</p>
             <p>Planned content for a community non-profit starting conversations and spreading knowledge about depression, mental health and happiness.</p>
           </article>
           <article class="vol reveal">
-            <p class="vol-meta"><span>Apr 2016 — 2018</span><span class="vol-cause">Education</span></p>
+            <p class="vol-meta">Apr 2016 — 2018 · <strong>Education</strong></p>
             <h3>Learning Facilitator</h3>
-            <p class="project-org">Cerdas Digital</p>
+            <p class="vol-org">Cerdas Digital</p>
             <p>Facilitated a digital-citizenship curriculum for 7th-grade students at Labschool Junior High School.</p>
           </article>
           <article class="vol reveal">
-            <p class="vol-meta"><span>2014 — Jan 2019</span><span class="vol-cause">Education</span></p>
+            <p class="vol-meta">2014 — Jan 2019 · <strong>Education</strong></p>
             <h3>Volunteer</h3>
-            <p class="project-org">Akademi Berbagi</p>
+            <p class="vol-org">Akademi Berbagi</p>
             <p>Volunteered with a community learning movement for five years.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Education, Certifications, Honors -->
-    <section class="section" id="education">
+    <!-- Education -->
+    <section class="block block-blue" id="education">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="kicker">09 — Learning</p>
-          <h2>Education &amp; certifications.</h2>
-        </div>
+        <h2 class="works-title reveal">Education &amp; Certifications</h2>
         <div class="edu-grid">
           <div class="edu-col reveal">
             <h3 class="col-title">Education</h3>
@@ -708,7 +630,6 @@
               <p class="edu-name">Universitas Gadjah Mada</p>
               <p class="edu-detail">Summer Course, Human Rights · Fully funded scholarship · Sep – Oct 2023</p>
             </div>
-
           </div>
           <div class="edu-col reveal">
             <h3 class="col-title">Languages</h3>
@@ -743,35 +664,18 @@
     </section>
 
     <!-- Contact -->
-    <section class="section section-alt contact" id="contact">
-      <div class="container contact-inner reveal">
-        <p class="kicker">10 — Contact</p>
-        <h2>Let's build something that lasts.</h2>
-        <p class="lead">
-          Open to conversations about philanthropic portfolios, social-impact programs and
-          sustainability partnerships. The fastest way to reach me is by email.
-        </p>
-        <div class="contact-links">
-          <a href="mailto:gitaswastipr@gmail.com" class="contact-link">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-            gitaswastipr@gmail.com
-          </a>
-          <a href="mailto:hellogitaswasti@gmail.com" class="contact-link">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-            hellogitaswasti@gmail.com
-          </a>
-          <a href="https://linkedin.com/in/gitaswastipr" class="contact-link" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>
-            LinkedIn
-          </a>
-          <a href="https://svvasti.medium.com/" class="contact-link" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13 7l4 4"/></svg>
-            Medium
-          </a>
-          <a href="assets/Gita_Swasti_CV_2026.pdf" class="contact-link" download>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>
-            Download CV (PDF)
-          </a>
+    <section class="block block-dark contact" id="contact">
+      <div class="container">
+        <h2 class="display contact-title reveal">Let's build something that lasts.</h2>
+        <div class="contact-grid reveal">
+          <p class="contact-lead">Open to conversations about philanthropic portfolios, social-impact programs and sustainability partnerships. The fastest way to reach me is by email.</p>
+          <div class="contact-links">
+            <a href="mailto:gitaswastipr@gmail.com" class="pill pill-light">gitaswastipr@gmail.com</a>
+            <a href="mailto:hellogitaswasti@gmail.com" class="pill pill-light">hellogitaswasti@gmail.com</a>
+            <a href="https://linkedin.com/in/gitaswastipr" class="pill pill-outline" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://svvasti.medium.com/" class="pill pill-outline" target="_blank" rel="noopener">Medium</a>
+            <a href="assets/Gita_Swasti_CV_2026.pdf" class="pill pill-outline" download>Download CV</a>
+          </div>
         </div>
       </div>
     </section>
@@ -779,6 +683,7 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
+      <p class="footer-brand">Gita.</p>
       <p>© <span id="year">2026</span> Gita Swasti · Bali, Indonesia</p>
       <a href="#top">Back to top ↑</a>
     </div>

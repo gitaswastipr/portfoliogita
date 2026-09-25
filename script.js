@@ -21,25 +21,31 @@
     if (!stored) applyTheme(e.matches ? 'dark' : 'light');
   });
 
-  // Mobile menu
+  // Full-screen menu
+  const header = document.querySelector('.site-header');
   const navToggle = document.querySelector('.nav-toggle');
   const navLinks = document.getElementById('nav-links');
-  const closeMenu = () => {
-    navLinks.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
-    navToggle.setAttribute('aria-label', 'Open menu');
-  };
-  navToggle.addEventListener('click', () => {
-    const open = navLinks.classList.toggle('open');
+  const setMenu = (open) => {
+    navLinks.classList.toggle('open', open);
+    header.classList.toggle('menu-open', open);
+    document.body.classList.toggle('menu-open', open);
     navToggle.setAttribute('aria-expanded', String(open));
     navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  };
+  navToggle.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+  navLinks.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navLinks.classList.contains('open')) { setMenu(false); navToggle.focus(); }
   });
-  navLinks.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
 
-  // Header border on scroll
-  const header = document.querySelector('.site-header');
-  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
+  // Solid header once past the hero photo
+  const hero = document.querySelector('.hero');
+  const onScroll = () => {
+    const limit = hero ? hero.offsetHeight - 80 : 8;
+    header.classList.toggle('scrolled', window.scrollY > limit);
+  };
   window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
   onScroll();
 
   // Reveal on scroll + count-up stats
