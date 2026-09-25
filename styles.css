@@ -190,16 +190,21 @@ h1, h2, h3, h4 { margin: 0; }
 
 /* ---------- Hero ---------- */
 .hero {
-  position: relative; overflow: hidden; background: #0b3aa8;
-  height: clamp(560px, 100vh, 1000px);
+  position: relative; overflow: hidden;
+  background: radial-gradient(110% 90% at 28% 25%, #0139a6 0%, #012a78 55%, #061c4a 100%);
+  height: clamp(520px, 84vh, 820px);
 }
 .hero::before {
   content: ""; position: absolute; inset: 0 0 auto; height: 160px; z-index: 1;
   background: linear-gradient(rgba(5, 20, 70, .45), transparent);
 }
-.hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.hero-photo {
+  position: absolute; top: 0; right: 8%; height: 100%; width: auto; max-width: none;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 30%, #000 80%, transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0%, #000 30%, #000 80%, transparent 100%);
+}
 .hero-tag {
-  position: absolute; z-index: 2; left: 32px; top: 104px; margin: 0;
+  position: absolute; z-index: 2; left: max(32px, calc((100% - 1440px) / 2 + 32px)); top: 104px; margin: 0;
   color: var(--blush-white); font-family: var(--type); font-size: 1.05rem; line-height: 1.45;
 }
 .hero-name {
@@ -227,7 +232,7 @@ h1, h2, h3, h4 { margin: 0; }
 .journey { display: grid; grid-template-columns: 43% 1fr; background: var(--cream); }
 .journey-media { display: grid; grid-template-rows: minmax(480px, 1fr) auto; }
 .journey-photo { position: relative; overflow: hidden; background: #0b3aa8; }
-.journey-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 48% 35%; transform: scale(1.25); transform-origin: 48% 38%; }
+.journey-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 45% 60%; }
 .journey-quote {
   margin: 0; background: var(--deep-rose); color: var(--blush-white); padding: 56px 48px;
   font-family: var(--display); font-style: italic; font-weight: 400; font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.15; text-align: center;
@@ -429,7 +434,7 @@ h1, h2, h3, h4 { margin: 0; }
 .zoom { display: block; overflow: hidden; cursor: zoom-in; }
 .zoom img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
 .zoom:hover img { transform: scale(1.04); }
-.journey-photo.zoom:hover img { transform: scale(1.3); }
+
 .lightbox { border: 0; padding: 0; background: transparent; max-width: min(92vw, 1400px); max-height: 92vh; overflow: visible; }
 .lightbox::backdrop { background: rgba(61, 15, 29, .92); }
 .lightbox img { display: block; max-width: min(92vw, 1400px); max-height: 88vh; width: auto; height: auto; }
@@ -468,8 +473,8 @@ h1, h2, h3, h4 { margin: 0; }
   .block { padding: 80px 0; }
   .display { margin-bottom: 36px; }
 
-  .hero { height: clamp(520px, 88vh, 760px); }
-  .hero-photo { object-position: 50% 25%; }
+  .hero { height: clamp(480px, 78vh, 680px); }
+  .hero-photo { right: auto; left: 50%; transform: translateX(-42%); height: 92%; top: 8%; }
   .hero-tag { left: 20px; top: 88px; }
 
   .intro { padding-top: 72px; }
