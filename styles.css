@@ -88,7 +88,7 @@ p { margin: 0 0 1em; }
 .site-header.scrolled { border-bottom-color: var(--line); }
 .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
 .brand { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; text-decoration: none; }
-.nav-links { display: flex; align-items: center; gap: 28px; list-style: none; margin: 0; padding: 0; }
+.nav-links { display: flex; align-items: center; gap: 22px; list-style: none; margin: 0; padding: 0; }
 .nav-links a { text-decoration: none; font-size: .95rem; color: var(--muted); transition: color .2s; }
 .nav-links a:hover, .nav-links a.active { color: var(--text); }
 .nav-links .nav-cta {
@@ -316,19 +316,6 @@ p { margin: 0 0 1em; }
   body { font-size: 16px; }
   .container { padding: 0 16px; }
   .section { padding: 72px 0; }
-  .nav-toggle { display: flex; }
-  .nav-links {
-    position: absolute; top: 68px; left: 0; right: 0;
-    flex-direction: column; align-items: stretch; gap: 0;
-    background: var(--bg); border-bottom: 1px solid var(--line);
-    padding: 8px 16px 16px;
-    display: none;
-  }
-  .nav-links.open { display: flex; }
-  .nav-links li { border-bottom: 1px solid var(--line); }
-  .nav-links li:last-child { border-bottom: 0; padding-top: 12px; }
-  .nav-links a { display: block; padding: 14px 0; font-size: 1.05rem; }
-  .nav-links .nav-cta { background: none; color: var(--accent); padding: 14px 0; font-weight: 600; }
 
   .hero { padding: 40px 0 40px; }
   .timeline::before { left: 6px; }
@@ -378,6 +365,53 @@ p { margin: 0 0 1em; }
   .skill-group { padding: 22px; }
   .honor { grid-template-columns: 1fr; gap: 6px; padding: 22px; }
 }
-@media (max-width: 960px) and (min-width: 761px) {
-  .nav-links { gap: 18px; }
+
+/* ---------- Projects & volunteering ---------- */
+.project-grid, .vol-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.vol-grid { grid-template-columns: repeat(3, 1fr); }
+.project, .vol {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px;
+  display: flex; flex-direction: column;
+}
+.project h3, .vol h3 { font-size: 1.25rem; }
+.project > p:not(.project-date):not(.project-org), .vol > p:last-child { color: var(--muted); margin: 0; font-size: .97rem; }
+.project .tags { margin-top: auto; padding-top: 16px; }
+.project-date { font-size: .88rem; font-weight: 600; color: var(--accent-2); margin: 0 0 6px; }
+.project-org { color: var(--accent); font-weight: 500; font-size: .93rem; margin: 4px 0 12px; }
+.vol-meta { display: flex; flex-direction: column; gap: 2px; font-size: .85rem; color: var(--muted); margin: 0 0 10px; }
+.vol-cause { font-weight: 600; color: var(--accent-2); }
+
+.cert-name { display: block; }
+.cert-issuer { display: block; font-size: .87rem; color: var(--muted); margin-top: 2px; }
+
+@media (max-width: 1060px) {
+  .nav-toggle { display: flex; }
+  .nav-links {
+    position: absolute; top: 68px; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: var(--bg); border-bottom: 1px solid var(--line);
+    padding: 8px 24px 16px; max-height: calc(100vh - 68px); overflow-y: auto;
+    display: none;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links li { border-bottom: 1px solid var(--line); }
+  .nav-links li:last-child { border-bottom: 0; padding-top: 12px; }
+  .nav-links a { display: block; padding: 12px 0; font-size: 1.05rem; }
+  .nav-links .nav-cta { background: none; color: var(--accent); padding: 12px 0; font-weight: 600; }
+  .vol-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 760px) {
+  .nav-links { padding: 8px 16px 16px; }
+  .project-grid, .vol-grid { grid-template-columns: 1fr; }
+  .project, .vol { padding: 22px; }
+}
+
+.edu-col-wide { grid-column: 1 / -1; }
+.edu-col-wide .certs { display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; }
+.edu-col-wide .certs li, .edu-col-wide .certs li:first-child { padding-top: 14px; }
+.edu-col-wide .certs li::before, .edu-col-wide .certs li:first-child::before { top: 12px; }
+.edu-col-wide .certs li:nth-last-child(2) { border-bottom: 0; }
+@media (max-width: 760px) {
+  .edu-col-wide .certs { grid-template-columns: 1fr; }
+  .edu-col-wide .certs li:nth-last-child(2) { border-bottom: 1px solid var(--line); }
 }
