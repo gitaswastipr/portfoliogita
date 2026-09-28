@@ -1,3 +1,17 @@
+/* ---------- Print (Save as PDF) ---------- */
+@page { size: A4; margin: 0; }
+@media print {
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .site-header, .nav-links, .lightbox, .skip-link, .theme-toggle { display: none !important; }
+  .js .reveal { opacity: 1 !important; transform: none !important; }
+  .bar span { width: var(--w) !important; transition: none !important; }
+  .hero { height: 720px !important; }
+  .block { padding: 56px 0 !important; }
+  .job, .win, .work, .book, .vol, .honor, .tool, .skill-group, .edu-col, .stat,
+  .practice-list li, .essay-list li, figure { break-inside: avoid; }
+  .area-title, .display, .works-title { break-after: avoid; }
+}
+
 /* ---------- Fonts ----------
    Jost: SIL Open Font License. JHC Rasbora and Type Machine: free for personal use,
    see the license files in assets/fonts. */
