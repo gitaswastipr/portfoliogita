@@ -10,6 +10,37 @@
   .job, .win, .work, .book, .vol, .honor, .tool, .skill-group, .edu-col, .stat,
   .practice-list li, .essay-list li, figure { break-inside: avoid; }
   .area-title, .display, .works-title { break-after: avoid; }
+
+  /* Compact version: skip sections that repeat other content, tighten spacing */
+  #wins, #practice, .job-photo, .honor-gallery, .tags, .book-en, .book-more,
+  .intro-links, .essay-more, .tool-use, .job-note, .lightbox-close { display: none !important; }
+  .hero { height: 460px !important; }
+  .block { padding: 36px 0 !important; }
+  .intro { padding-top: 40px !important; }
+  .stats-grid { margin-top: 32px !important; }
+  .display, .works-title, .contact-title { font-size: 3rem !important; margin-bottom: 24px !important; }
+  .journey-media { grid-template-rows: 300px auto !important; }
+  .journey-quote { padding: 28px 32px !important; font-size: 1.6rem !important; }
+  .journey-copy { padding: 40px 48px !important; }
+  .facts { margin-top: 16px !important; }
+  .area + .area { margin-top: 28px !important; }
+  .job { padding: 16px 0 !important; }
+  .job-body li { margin-bottom: 4px !important; }
+  .works-grid { gap: 28px 32px !important; }
+  .work-media { aspect-ratio: 16 / 9 !important; margin-bottom: 12px !important; }
+  .essay-list a { padding: 12px 0 !important; }
+  .book-grid, .vol-grid { gap: 14px !important; }
+  .book-cover { padding: 12px 0 !important; margin-bottom: 12px !important; }
+  .book-cover img, .book-cover-text { height: 110px !important; }
+  .book-quote { font-size: .95rem !important; margin-top: 10px !important; }
+  .book-link { padding-top: 10px !important; }
+  .honor { padding: 16px 0 !important; }
+  .vol { padding: 18px !important; }
+  .edu-col { padding: 22px !important; }
+  .skill-groups, .tool-groups { gap: 24px !important; }
+  .tool { padding: 8px 12px !important; }
+  .tool-list { gap: 6px !important; }
+  .contact { padding-bottom: 40px !important; }
 }
 
 /* ---------- Fonts ----------
