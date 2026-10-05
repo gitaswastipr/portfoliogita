@@ -11,7 +11,7 @@ index.html                     Page content
 styles.css                     Styles, including light/dark themes and responsive layout
 script.js                      Theme toggle, mobile menu, scroll animations
 assets/                        Photos and the downloadable CV
-assets/fonts/                  JHC Rasbora, Type Machine and Jost, with their license files
+assets/fonts/                  Fonts: add licensed Saral LT and Quincy CF web files here (see styles.css); Type Machine and Jost are bundled
 ```
 
 ## Run locally

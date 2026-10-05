@@ -51,11 +51,16 @@
 }
 
 /* ---------- Fonts ----------
-   Jost: SIL Open Font License. JHC Rasbora and Type Machine: free for personal use,
-   see the license files in assets/fonts. */
-@font-face { font-family: "JHC Rasbora"; src: url("assets/fonts/JHCRasbora-Extrabold.otf") format("opentype"); font-weight: 600; font-display: swap; }
-@font-face { font-family: "JHC Rasbora"; src: url("assets/fonts/JHCRasbora-RegularItalic.otf") format("opentype"); font-weight: 400; font-style: italic; font-display: swap; }
+   Saral LT (Linotype) for headings and body, Quincy CF Italic (Connary Fagen) for italic accents.
+   Both are commercial fonts: add the licensed web files to assets/fonts/ with the names below.
+   local() lets an installed copy load first; until the files exist, the fallbacks in the
+   --display, --sans and --serif-italic stacks are used. Type Machine stays for small labels. */
+@font-face { font-family: "Saral LT"; src: local("Saral LT Light"), local("SaralLT-Light"), url("assets/fonts/SaralLT-Light.woff2") format("woff2"), url("assets/fonts/SaralLT-Light.woff") format("woff"); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: "Saral LT"; src: local("Saral LT Roman"), local("SaralLT-Roman"), url("assets/fonts/SaralLT-Roman.woff2") format("woff2"), url("assets/fonts/SaralLT-Roman.woff") format("woff"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Saral LT"; src: local("Saral LT Bold"), local("SaralLT-Bold"), url("assets/fonts/SaralLT-Bold.woff2") format("woff2"), url("assets/fonts/SaralLT-Bold.woff") format("woff"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Quincy CF"; src: local("Quincy CF Regular Italic"), local("QuincyCF-RegularItalic"), url("assets/fonts/QuincyCF-RegularItalic.woff2") format("woff2"), url("assets/fonts/QuincyCF-RegularItalic.woff") format("woff"); font-weight: 400; font-style: italic; font-display: swap; }
 @font-face { font-family: "Type Machine"; src: url("assets/fonts/TypeMachine.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+/* Jost stays bundled as the first fallback for Saral LT */
 @font-face { font-family: "Jost"; src: url("assets/fonts/jost-variable.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
 @font-face { font-family: "Jost"; src: url("assets/fonts/jost-variable-italic.woff2") format("woff2"); font-weight: 100 900; font-style: italic; font-display: swap; }
 
@@ -93,8 +98,10 @@
   --hi: var(--bubblegum);
   --hi-soft: var(--pastel-petal);
 
-  --display: "JHC Rasbora", "Arial Black", sans-serif;
-  --sans: "Jost", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sans: "Saral LT", "Jost", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --display: var(--sans);
+  --serif-italic: "Quincy CF", Georgia, "Times New Roman", Times, serif;
+  --display-weight: 400;
   --type: "Type Machine", "Courier New", monospace;
   --max: 1180px;
   color-scheme: light;
@@ -169,7 +176,7 @@ h1, h2, h3, h4 { margin: 0; }
 :focus-visible { outline: 3px solid var(--name); outline-offset: 3px; }
 
 .display {
-  font-family: var(--display); font-weight: 800;
+  font-family: var(--display); font-weight: var(--display-weight);
   font-size: clamp(2.4rem, 6vw, 5rem); line-height: 1.02; letter-spacing: -.025em;
   margin-bottom: 48px;
 }
@@ -205,7 +212,7 @@ h1, h2, h3, h4 { margin: 0; }
 .site-header.scrolled { background: var(--cream); color: var(--ink); box-shadow: 0 1px 0 var(--line); }
 .site-header.menu-open { background: transparent; color: var(--blush-white); box-shadow: none; }
 .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; padding: 0 32px; max-width: 1440px; margin: 0 auto; }
-.brand { font-family: var(--display); font-weight: 800; font-size: 1.6rem; letter-spacing: -.03em; text-decoration: none; color: var(--name); }
+.brand { font-family: var(--display); font-weight: var(--display-weight); font-size: 1.6rem; letter-spacing: -.03em; text-decoration: none; color: var(--name); }
 .nav-actions { display: flex; align-items: center; gap: 10px; }
 .nav-cta {
   text-decoration: none; font-weight: 600; font-size: .82rem; letter-spacing: .06em; text-transform: uppercase;
@@ -235,7 +242,7 @@ h1, h2, h3, h4 { margin: 0; }
 .nav-links.open { display: flex; }
 .nav-links li { width: 100%; max-width: 1180px; margin: 0 auto; }
 .nav-links a {
-  display: inline-block; font-family: var(--display); font-weight: 800; letter-spacing: -.02em; text-decoration: none;
+  display: inline-block; font-family: var(--display); font-weight: var(--display-weight); letter-spacing: -.02em; text-decoration: none;
   font-size: clamp(1.9rem, 5.6vh, 3.4rem); line-height: 1.18; color: var(--blush-white); transition: color .2s, transform .2s;
 }
 .nav-links a:hover, .nav-links a.active { color: var(--bubblegum); transform: translateX(8px); }
@@ -261,7 +268,7 @@ h1, h2, h3, h4 { margin: 0; }
 }
 .hero-name {
   position: absolute; z-index: 2; left: 0; right: 0; bottom: 0;
-  font-family: var(--display); font-weight: 800; color: var(--name);
+  font-family: var(--display); font-weight: var(--display-weight); color: var(--name);
   font-size: 18.4vw; line-height: .8; text-align: center; white-space: nowrap; letter-spacing: -.035em;
   transform: translateY(8%);
 }
@@ -277,7 +284,7 @@ h1, h2, h3, h4 { margin: 0; }
 
 .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 88px; }
 .stat { border-top: 3px solid var(--ink); padding-top: 18px; }
-.stat-num { display: block; font-family: var(--display); font-weight: 800; letter-spacing: -.03em; font-size: clamp(3rem, 6vw, 4.6rem); line-height: 1; color: var(--num); font-variant-numeric: tabular-nums; }
+.stat-num { display: block; font-family: var(--display); font-weight: var(--display-weight); letter-spacing: -.03em; font-size: clamp(3rem, 6vw, 4.6rem); line-height: 1; color: var(--num); font-variant-numeric: tabular-nums; }
 .stat-label { display: block; margin-top: 10px; color: var(--ink-soft); font-size: .95rem; line-height: 1.45; }
 
 /* ---------- Journey ---------- */
@@ -287,7 +294,7 @@ h1, h2, h3, h4 { margin: 0; }
 .journey-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 45% 60%; }
 .journey-quote {
   margin: 0; background: var(--deep-rose); color: var(--blush-white); padding: 56px 48px;
-  font-family: var(--display); font-style: italic; font-weight: 400; font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.15; text-align: center;
+  font-family: var(--serif-italic); font-style: italic; font-weight: 400; font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.15; text-align: center;
 }
 .journey-copy { padding: 112px clamp(32px, 7vw, 112px); }
 .journey-copy .display { font-size: clamp(2.4rem, 4.6vw, 4.2rem); }
@@ -319,7 +326,7 @@ h1, h2, h3, h4 { margin: 0; }
   padding: 26px 0; border-top: 2px solid var(--line-dark); text-decoration: none;
 }
 .practice-list li:last-child a { border-bottom: 2px solid var(--line-dark); }
-.practice-num { font-family: var(--display); font-weight: 800; font-size: 1.8rem; color: var(--bubblegum); line-height: 1; }
+.practice-num { font-family: var(--display); font-weight: var(--display-weight); font-size: 1.8rem; color: var(--bubblegum); line-height: 1; }
 .practice-name { font-weight: 600; font-size: clamp(1.2rem, 2.2vw, 1.6rem); line-height: 1.25; transition: color .2s; }
 .practice-desc { color: var(--on-dark-soft); }
 .practice-list a:hover .practice-name { color: var(--pastel-petal); }
@@ -327,7 +334,7 @@ h1, h2, h3, h4 { margin: 0; }
 /* ---------- Experience ---------- */
 .area + .area { margin-top: 80px; }
 .area-title {
-  font-family: var(--display); font-weight: 800; letter-spacing: -.02em; color: var(--maroon);
+  font-family: var(--display); font-weight: var(--display-weight); letter-spacing: -.02em; color: var(--maroon);
   font-size: clamp(1.4rem, 2.5vw, 2rem); line-height: 1.1; margin-bottom: 8px;
 }
 .job { display: grid; grid-template-columns: 240px 1fr; gap: 40px; padding: 32px 0; border-top: 3px solid var(--ink); }
@@ -356,7 +363,7 @@ h1, h2, h3, h4 { margin: 0; }
 
 /* ---------- Works ---------- */
 .works-title {
-  font-family: var(--display); font-weight: 800; letter-spacing: -.035em; line-height: 1.02; color: var(--maroon); text-align: center;
+  font-family: var(--display); font-weight: var(--display-weight); letter-spacing: -.035em; line-height: 1.02; color: var(--maroon); text-align: center;
   font-size: clamp(2.6rem, 6vw, 4.6rem); margin-bottom: 56px;
 }
 .works-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 56px 48px; max-width: 980px; margin: 0 auto; }
@@ -374,12 +381,12 @@ h1, h2, h3, h4 { margin: 0; }
 .work-pair a:first-child img { object-position: 55% 45%; }
 .work-pair a:last-child img { object-position: 50% 62%; }
 .work-tile { display: grid; place-items: center; overflow: hidden; }
-.work-tile span { font-family: var(--display); font-weight: 800; letter-spacing: -.03em; font-size: clamp(2rem, 4vw, 3.1rem); line-height: 1; text-align: center; }
+.work-tile span { font-family: var(--display); font-weight: var(--display-weight); letter-spacing: -.03em; font-size: clamp(2rem, 4vw, 3.1rem); line-height: 1; text-align: center; }
 .tile-orange { background: var(--blush-rose); color: var(--blush-white); }
 .tile-maroon { background: var(--rosewood); color: var(--blush-white); }
 .tile-pink { background: var(--pastel-petal); color: var(--deep-rose); }
 .work-date { font-family: var(--type); font-size: .95rem; margin-bottom: 6px; opacity: .85; }
-.work h3 { font-family: var(--display); font-weight: 800; font-size: 1.45rem; letter-spacing: -.02em; line-height: 1.15; margin-bottom: 10px; }
+.work h3 { font-family: var(--display); font-weight: var(--display-weight); font-size: 1.45rem; letter-spacing: -.02em; line-height: 1.15; margin-bottom: 10px; }
 .work p:last-child { font-size: .98rem; line-height: 1.6; margin: 0; }
 
 /* ---------- Writing ---------- */
@@ -390,8 +397,8 @@ h1, h2, h3, h4 { margin: 0; }
 }
 .essay-featured:hover { transform: translateY(-4px); }
 .essay-badge { font-family: var(--type); font-size: 1.05rem; margin-bottom: 20px; }
-.essay-featured h3 { font-family: var(--display); font-weight: 800; letter-spacing: -.03em; font-size: clamp(2.2rem, 5.6vw, 4.6rem); line-height: 1; }
-.essay-en { font-family: var(--display); font-style: italic; font-weight: 400; font-size: 1.4rem; margin: 14px 0 6px; }
+.essay-featured h3 { font-family: var(--display); font-weight: var(--display-weight); letter-spacing: -.03em; font-size: clamp(2.2rem, 5.6vw, 4.6rem); line-height: 1; }
+.essay-en { font-family: var(--serif-italic); font-style: italic; font-weight: 400; font-size: 1.4rem; margin: 14px 0 6px; }
 .essay-featured .essay-meta { font-family: var(--type); font-size: 1rem; opacity: .8; margin-bottom: 28px; }
 
 .essay-list { list-style: none; margin: 0; padding: 0; }
@@ -418,7 +425,7 @@ h1, h2, h3, h4 { margin: 0; }
 /* ---------- Honors ---------- */
 .honor { display: grid; grid-template-columns: 150px 1fr; gap: 32px; padding: 32px 0; border-top: 3px solid var(--ink); }
 .honor:last-child { border-bottom: 3px solid var(--ink); }
-.honor-date { font-family: var(--display); font-weight: 800; letter-spacing: -.03em; font-size: 2.1rem; line-height: 1; color: var(--accent); margin: 0; }
+.honor-date { font-family: var(--display); font-weight: var(--display-weight); letter-spacing: -.03em; font-size: 2.1rem; line-height: 1; color: var(--accent); margin: 0; }
 .honor-date span { display: block; }
 .honor h3 { font-weight: 600; font-size: clamp(1.25rem, 2.2vw, 1.55rem); line-height: 1.25; }
 .honor-issuer { font-weight: 700; font-size: .9rem; margin: 6px 0 12px; }
@@ -464,7 +471,7 @@ h1, h2, h3, h4 { margin: 0; }
 .visible .bar span { width: var(--w); }
 .certs { list-style: none; margin: 0; padding: 0; counter-reset: c; display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; }
 .certs li { counter-increment: c; position: relative; padding: 16px 0 16px 52px; border-top: 2px solid var(--line); }
-.certs li::before { content: counter(c, decimal-leading-zero); position: absolute; left: 0; top: 13px; font-family: var(--display); font-weight: 800; font-size: 1.35rem; color: var(--num); }
+.certs li::before { content: counter(c, decimal-leading-zero); position: absolute; left: 0; top: 13px; font-family: var(--display); font-weight: var(--display-weight); font-size: 1.35rem; color: var(--num); }
 .cert-name { display: block; font-weight: 700; }
 .cert-issuer { display: block; font-size: .88rem; color: var(--ink-soft); margin-top: 2px; }
 
@@ -479,7 +486,7 @@ h1, h2, h3, h4 { margin: 0; }
 .site-footer .container { position: relative; padding-top: 24px; }
 .site-footer .container::before { content: ""; position: absolute; top: 0; left: 32px; right: 32px; border-top: 2px solid var(--line-dark); }
 .footer-inner p { margin: 0; }
-.footer-brand { color: var(--name); font-family: var(--display); font-weight: 800; font-size: 1.5rem; letter-spacing: -.03em; }
+.footer-brand { color: var(--name); font-family: var(--display); font-weight: var(--display-weight); font-size: 1.5rem; letter-spacing: -.03em; }
 .footer-inner a { text-decoration: none; font-weight: 700; color: var(--on-dark); }
 
 /* ---------- Photos & lightbox ---------- */
@@ -589,17 +596,17 @@ h1, h2, h3, h4 { margin: 0; }
 .book-cover-text {
   display: flex; flex-direction: column; justify-content: space-between; height: 210px; width: 140px; padding: 16px 14px;
   background: var(--rosewood); color: var(--blush-white); box-shadow: 0 10px 24px rgba(61, 15, 29, .28);
-  font-family: var(--display); font-weight: 800; font-size: 1.15rem; line-height: 1.1; letter-spacing: -.01em;
+  font-family: var(--display); font-weight: var(--display-weight); font-size: 1.15rem; line-height: 1.1; letter-spacing: -.01em;
 }
 .book-cover-text small { font-family: var(--type); font-weight: 400; font-size: .8rem; letter-spacing: 0; }
 .book-meta { font-family: var(--type); font-size: .95rem; color: var(--ink-soft); margin-bottom: 10px; }
-.book h3 { font-family: var(--display); font-weight: 800; font-size: 1.35rem; letter-spacing: -.02em; line-height: 1.1; color: var(--maroon); }
+.book h3 { font-family: var(--display); font-weight: var(--display-weight); font-size: 1.35rem; letter-spacing: -.02em; line-height: 1.1; color: var(--maroon); }
 .book-sub { font-style: italic; color: var(--ink-soft); margin: 4px 0 2px; font-size: .95rem; }
 .book-author { font-weight: 600; margin: 0 0 8px; font-size: .95rem; }
 .book-stars { color: var(--rosewood); letter-spacing: .12em; font-size: 1.05rem; }
 .book-stars .off { color: var(--line); }
 .book-quote {
-  margin: 18px 0 0; font-family: var(--display); font-style: italic; font-weight: 400;
+  margin: 18px 0 0; font-family: var(--serif-italic); font-style: italic; font-weight: 400;
   font-size: 1.08rem; line-height: 1.4; color: var(--ink);
 }
 .book-en { margin: 8px 0 0; font-size: .92rem; color: var(--ink-soft); }
@@ -628,7 +635,7 @@ h1, h2, h3, h4 { margin: 0; }
   transition: background .2s, box-shadow .2s;
 }
 .tool:hover { background: rgba(243, 138, 165, .12); box-shadow: inset 0 0 0 1.5px var(--bubblegum); }
-.tool-name { font-family: var(--display); font-weight: 800; font-size: 1.3rem; letter-spacing: -.02em; color: var(--pastel-petal); line-height: 1.15; }
+.tool-name { font-family: var(--display); font-weight: var(--display-weight); font-size: 1.3rem; letter-spacing: -.02em; color: var(--pastel-petal); line-height: 1.15; }
 .tool-use { font-family: var(--type); font-size: .92rem; color: var(--on-dark-soft); }
 @media screen and (max-width: 1024px) { .tool-groups { grid-template-columns: 1fr 1fr; } .tool-group:first-child { grid-column: 1 / -1; } .tool-group:first-child .tool-list { grid-template-columns: 1fr 1fr; } }
 @media screen and (max-width: 820px) { .tool-groups { grid-template-columns: 1fr; gap: 32px; } .tool-group:first-child .tool-list { grid-template-columns: 1fr; } }
@@ -640,7 +647,7 @@ h1, h2, h3, h4 { margin: 0; }
   background: var(--deep-rose); color: var(--blush-white); box-shadow: none; transition: transform .3s ease;
 }
 .book-more:hover { transform: translateY(-4px); }
-.book-more-title { font-family: var(--display); font-weight: 800; font-size: 2rem; line-height: 1.05; letter-spacing: -.025em; color: var(--pastel-petal); }
+.book-more-title { font-family: var(--display); font-weight: var(--display-weight); font-size: 2rem; line-height: 1.05; letter-spacing: -.025em; color: var(--pastel-petal); }
 .book-more-text { color: rgba(255, 246, 248, .78); }
 .book-more .pill { background: var(--pastel-petal); color: var(--deep-rose); }
 :root[data-theme="dark"] .book-more { background: var(--rosewood); }
