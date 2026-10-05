@@ -21,22 +21,8 @@
     if (!stored) applyTheme(e.matches ? 'dark' : 'light');
   });
 
-  // Full-screen menu
   const header = document.querySelector('.site-header');
-  const navToggle = document.querySelector('.nav-toggle');
   const navLinks = document.getElementById('nav-links');
-  const setMenu = (open) => {
-    navLinks.classList.toggle('open', open);
-    header.classList.toggle('menu-open', open);
-    document.body.classList.toggle('menu-open', open);
-    navToggle.setAttribute('aria-expanded', String(open));
-    navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-  };
-  navToggle.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
-  navLinks.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && navLinks.classList.contains('open')) { setMenu(false); navToggle.focus(); }
-  });
 
   // Solid header once past the hero photo
   const hero = document.querySelector('.hero');
