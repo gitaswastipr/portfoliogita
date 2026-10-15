@@ -1,0 +1,56 @@
+name: Publish portfolio with Feeling Rules
+
+on:
+  push:
+    branches: ['claude/portfolio-website-rul53o']
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: portfolio-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out portfolio
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Prepare static website
+        run: |
+          mkdir _site
+          cp index.html styles.css script.js .nojekyll _site/
+          cp -R assets _site/assets
+      - name: Refresh all public Feeling Rules previews
+        id: refresh
+        continue-on-error: true
+        run: python scripts/update_feeling_rules.py --root _site
+      - name: Report refresh failure
+        if: steps.refresh.outcome == 'failure'
+        run: echo '::warning::Substack refresh failed. Publishing the existing checked-in article previews instead.'
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
