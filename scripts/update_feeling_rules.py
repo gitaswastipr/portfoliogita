@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
 """Refresh public Feeling Rules article previews. Python 3; no dependencies.
-Uses Substack's public archive (paginated), not a browser-side RSS proxy.
+Uses the paginated public archive with a public RSS fallback.
+RSS coverage may be limited to recent posts; previously saved previews are retained.
 The public archive endpoint is unofficial and may change. A failed refresh
 leaves the last successful HTML and metadata untouched.
 """
 import argparse
 import datetime as dt
 import html
+import email.utils
+import shutil
+import xml.etree.ElementTree as ET
 import json
 from pathlib import Path
 import re
@@ -26,7 +30,7 @@ def get(url):
     with urllib.request.urlopen(req, timeout=30) as res:
         return res.read()
 
-def fetch_all():
+def fetch_archive():
     posts, seen = [], set()
     offset = 0
     while True:
@@ -51,6 +55,69 @@ def fetch_all():
         raise ValueError('Empty archive; existing previews were preserved.')
     return sorted(posts, key=lambda p: p.get('post_date', ''), reverse=True)
 
+def fetch_rss():
+    xml = ET.fromstring(get(BASE + '/feed'))
+    posts = []
+    for item in xml.findall('./channel/item'):
+        url = item.findtext('link') or ''
+        if not url.startswith(BASE + '/p/'):
+            continue
+        enclosure = item.find('enclosure')
+        date = email.utils.parsedate_to_datetime(item.findtext('pubDate')).isoformat()
+        subtitle = html.unescape(item.findtext('description') or '')
+        # RSS descriptions can contain markup. Plain text keeps previews safe.
+        subtitle = re.sub(r'<[^>]*>', '', subtitle).strip()
+        posts.append({
+            'canonical_url': url, 'title': item.findtext('title') or 'Untitled',
+            'subtitle': subtitle, 'post_date': date,
+            'slug': url.rsplit('/', 1)[-1],
+            'cover_image': enclosure.get('url') if enclosure is not None else None,
+        })
+    if not posts:
+        raise ValueError('Public RSS feed returned no articles; saved previews retained.')
+    return posts
+
+def fetch_all():
+    try:
+        return fetch_archive()
+    except Exception as archive_error:
+        print(f'Archive unavailable ({archive_error}). Trying the public RSS feed.')
+    posts = fetch_rss()
+    print('Using recent RSS posts; previously saved previews are retained. '
+          'Older articles never imported may need a manual archive backfill.')
+    return posts
+
+def load_cached(root):
+    source_root = Path(__file__).resolve().parents[1]
+    for path in [root / 'feeling-rules-posts.json', source_root / 'feeling-rules-posts.json']:
+        if path.exists():
+            data = json.loads(path.read_text(encoding='utf-8'))
+            if not isinstance(data, list):
+                raise ValueError('Unexpected saved article list')
+            return data
+    return []
+
+def repair_images(root, saved):
+    """Recover supplied images uploaded at the repo root, even offline."""
+    source_root = Path(__file__).resolve().parents[1]
+    for post in saved:
+        relative = post.get('image', '')
+        if not relative or not relative.startswith('assets/feeling-rules/'):
+            continue
+        target = (root / relative).resolve()
+        if not target.is_relative_to(root):
+            raise ValueError('Unsafe image path')
+        if target.exists():
+            continue
+        candidates = [source_root / relative, source_root / Path(relative).name,
+                      root / Path(relative).name]
+        for source in candidates:
+            if source.is_file():
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(source, target)
+                print(f'Restored article image: {relative}')
+                break
+
 def normalize(p, root):
     url = p['canonical_url']
     date = dt.datetime.fromisoformat(p['post_date'].replace('Z', '+00:00'))
@@ -63,17 +130,16 @@ def normalize(p, root):
         parsed = urllib.parse.urlparse(image)
         if parsed.scheme != 'https' or parsed.hostname not in ('substackcdn.com', 'substack-post-media.s3.amazonaws.com'):
             raise ValueError('Unexpected image host')
-        try:
-            content = get(image)
-            # The site's enclosure may negotiate JPEG or WebP. Preserve bytes;
-            # browsers identify the actual format regardless of the extension.
-            local_image = f'assets/feeling-rules/{slug}.jpg'
-            path = root / local_image
-            path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_bytes(content)
-        except Exception:
-            # Text previews remain useful if a remote cover is unavailable.
-            local_image = ''
+        local_image = f'assets/feeling-rules/{slug}.jpg'
+        path = root / local_image
+        if not path.exists():
+            try:
+                content = get(image)
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(content)
+            except Exception as error:
+                print(f'Cover unavailable for {slug}: {error}')
+                local_image = ''
     return {
         'url': url, 'title': p['title'], 'subtitle': html.unescape(p.get('subtitle') or ''),
         'date': date.date().isoformat(), 'date_label': date.strftime('%d %B %Y').lstrip('0'),
@@ -108,10 +174,19 @@ def main():
     args = parser.parse_args()
     root = args.root.resolve()
     path = root / 'index.html'
+    saved = load_cached(root)
+    repair_images(root, saved)
     source = path.read_text(encoding='utf-8')
     if source.count(START) != 1 or source.count(END) != 1:
         raise ValueError('Expected one article region. Existing HTML was preserved.')
-    posts = [normalize(p, root) for p in fetch_all()]
+    incoming = [normalize(p, root) for p in fetch_all()]
+    merged = {p['url']: p for p in saved}
+    for post in incoming:
+        old = merged.get(post['url'], {})
+        if not post.get('image') and old.get('image') and (root / old['image']).exists():
+            post['image'] = old['image']
+        merged[post['url']] = post
+    posts = sorted(merged.values(), key=lambda p: p.get('date', ''), reverse=True)
     region = '\n        ' + '\n        '.join(render(p, i) for i, p in enumerate(posts)) + '\n        '
     before, rest = source.split(START)
     _, after = rest.split(END)
